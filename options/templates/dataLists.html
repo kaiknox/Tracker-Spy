@@ -111,16 +111,17 @@
 
    <div ng-if="type.viewing == 'blocked' || type.viewing == 'whiteListed'" ng-repeat="item in data" class=" website-item" data-tracker="{{$index}}">
       <div style="padding: 10px 15px 10px 15px; display: flex; align-items: center;">
-         <div style="width: 80%;">
+         <div style="width: 75%; border-right: 1px solid var(--fill-grey-1);">
             <img height="20px" style="line-height: 0; margin-right: 10px; border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.url}}">
             <span style="line-height: 0;">{{item.url}} <span class="color-text red" ng-if="item.type == 'CDN'">({{'detailsModal__blocked__item__only_cookies' | i18n}})</span> <i ng-if="type == 'blocked'" class="fas fa-ban color-text red" data-toggle="tooltip" title="Blocked" style="margin-left: 10px;"></i></span>
          </div>
 
-         <span style="line-height: 0; margin-top: -2px; margin-left: auto;"><button style="padding: 4px 10px;" ng-if="type.viewing == 'blocked'" ng-click="unblockTracker(item.url)"  type="button" class="button secondary-action green rounded"><i class="fas fa-check" style="margin-right: 10px;"></i>{{'action_unblock' | i18n}}</button>
-            <button ng-if="type.viewing == 'whiteListed'" ng-click="attemptBlockTracker(item.url)" type="button" class="button secondary-action red rounded" style="padding: 4px 10px;"><i class="fas fa-ban" style="margin-right: 10px;"></i>{{'action_block' | i18n}}</button></span>
+         <span style="line-height: 0; margin-top: -2px; margin-left: auto;"><button style="background:  none; padding: 0;" ng-if="type.viewing == 'blocked'" ng-click="unblockTracker(item.url)"  type="button" class="button secondary-action green rounded"><i class="fas fa-check" style="margin-right: 10px;"></i>{{'action_unblock' | i18n}}</button>
+            <button ng-if="type.viewing == 'whiteListed'" ng-click="attemptBlockTracker(item.url)" type="button" class="button secondary-action red rounded" style="background:  none; padding: 0;"><i class="fas fa-ban" style="margin-right: 10px;"></i>{{'action_block' | i18n}}</button></span>
       </div>
       <hr style="margin: 0 15px 0 15px;" ng-if="data.length !== $index + 1">
    </div>
+
 
 
 

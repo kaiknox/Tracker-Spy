@@ -7,8 +7,5 @@ $(document).ready(function () {
     setTimeout(function () {
         $(".graph-bar").removeClass("hide");
         $(".graph-bar-hr").removeClass("hide");
-    }, 300)
-    $(document).ready(function () {
-
-    });
+    }, 1000)
 });

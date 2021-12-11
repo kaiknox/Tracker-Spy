@@ -336,7 +336,7 @@
 
                               <span style=""><img style="border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.name}}"></span><span style="margin-left: 10px;">{{item.name}}</span>
                               <div style="margin-top: 5px;">
-            <span class="graph-bar-hr hide color-bg green" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (websites.summary.maxValue)) * 90}}%"></span>
+            <span ng-class="$parent.pageLoaded == true ? '' : 'hide'" class="graph-bar-hr color-bg green" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (websites.summary.maxValue)) * 90}}%"></span>
 
             <span style="line-height: 0; vertical-align: middle; font-size: 13px;" class="color-text green">{{item.data.length}}</span>
          </div>
@@ -354,7 +354,7 @@
 
                               <span style=""><img style="border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.name}}"></span><span style="margin-left: 10px;">{{item.name}}</span>
                               <div style="margin-top: 5px;">
-            <span class="graph-bar-hr hide color-bg blue" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (trackers.summary.maxValue)) * 90}}%"></span>
+            <span ng-class="$parent.pageLoaded == true ? '' : 'hide'" class="graph-bar-hr color-bg blue" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (trackers.summary.maxValue)) * 90}}%"></span>
 
             <span style="line-height: 0; vertical-align: middle; font-size: 13px;" class="color-text blue">{{item.data.length}}</span>
          </div>
@@ -484,7 +484,7 @@
            
 <div>
    <div style="background: var(--secondary-bg-group); width: 70px; height: 70px; border-radius: 100px;">
-      <img src="https://kaiknox.com/kai.png" style="width: 70px; height: 70px; border-radius: 100px;">
+      <img src="https://kaiknox.com/me.jpeg" style="width: 70px; height: 70px; border-radius: 100px;">
    </div>
    <h4 style="text-align: center; margin-top: 5px; margin-bottom: 0;">Kai K</h4>
 </div>
@@ -567,7 +567,7 @@
 
 
                            <div class="col-md-6">
-                              <a target="_blank" class="hr-icon-label hover" style="display: flex;">
+                              <a target="_blank" class="hr-icon-label hover" style="display: flex;" href="https://github.com/kaiknox/Tracker-Spy.git">
                                  <span class="label-icon red color-bg" style="">
                                     <i class="fas fa-hands-helping" style="color: white; margin-right: 10px;"></i>
                                  </span>

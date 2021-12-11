@@ -1,3 +1,4 @@
+{{$parent.pageLoaded}}
 <div style="position: absolute; height: 100px; width: 100%;">
    <div style="position: absolute; left: 0; height: 100%;">
       <span class="graph-total" style="width: max-content; font-size: 12px; position: absolute; top: 0; right: 10px; transform: translateY(-50%);">{{maxVal + (maxVal % 2)}}</span>
@@ -12,7 +13,7 @@
    <div ng-repeat="item in data" style="width:25px; display: inline-block; margin-right: 10px; position: relative;">
       <div bttooltip="" data-toggle="tooltip" title="{{item.name}} ({{item.data.length}})">
          <div style="height: 100px; position: relative;">
-            <div class="graph-bar hide color-bg {{color}}" style="transform: translateX(-50%); left:  50%; border-radius: 3px; bottom: 0; position: absolute; width: 10px; height: {{(item.data.length / (maxVal + (maxVal % 2))) * 100}}px"></div>
+            <div ng-class="$parent.$parent.pageLoaded == true ? '' : 'hide'" class="graph-bar color-bg {{color}}" style="transform: translateX(-50%); left:  50%; border-radius: 3px; bottom: 0; position: absolute; width: 10px; height: {{(item.data.length / (maxVal + (maxVal % 2))) * 100}}px"></div>
          </div>
          <span ng-show="item.trackers" style="left: 50%; border-radius: 100px; position: relative;"><img style="transform: translateX(-50%); border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.name}}"></span>
          <span ng-hide="item.trackers" style="left: 50%; border-radius: 100px; position: relative;"><img style="transform: translateX(-50%); border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.parentDomain}}"></span>

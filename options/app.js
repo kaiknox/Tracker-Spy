@@ -107,6 +107,17 @@ app.controller('mainController', function app($scope, $timeout) {
       }
     }
 
+    chrome.storage.onChanged.addListener(function(changes, namespace) {
+  if ("websites" in changes) {
+    chrome.storage.local.get("websites", function(result) {
+      var websiteData = JSON.parse(result.websites);
+      websites.list.data = websiteData.totalTracking;
+        loadAllData();
+    });
+  }
+});
+    loadAllData();
+function loadAllData() {
     //Sort website list by trackers count (from big to small)
     websites.list.data.sort(function(a, b) {
       return b.trackers.length - a.trackers.length;
@@ -197,7 +208,7 @@ app.controller('mainController', function app($scope, $timeout) {
       a.url = ""
     });
 
-
+}
 
 
     var popupAlert = function(options) {
@@ -1676,6 +1687,8 @@ if (websites.list.data[recentLocationUseItemPos].info.privacy.location) {
 
     setTimeout(function() {
       $(".main-container").css("opacity", "1")
+
+      $scope.pageLoaded = true
 
       setTimeout(function() {
 

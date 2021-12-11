@@ -7,7 +7,7 @@
     ////////////////////////////////////////////////////
 *-------------------------------------------------------*/        
     "general__description_short": {
-      "message": "Get to know who is tracking you."
+      "message": "Saber que et rastreja."
    },
 
 /*-------------------------------------------------------
@@ -43,7 +43,7 @@
       "message": "Resum de llocs web"
    },
     "websites__summary__info": {
-      "message": "Un resum dels llocs web que has visitat, amb el major número de rastrejadors."
+      "message": "Un resum dels llocs web que has visitat, amb el major nombre de rastrejadors."
    },
     "websites__list__title": {
       "message": "Llista de llocs web"
@@ -234,7 +234,7 @@
       "message": "S'han bloquejat les cookies per a aquest URL"
    },
     "status__clear_cookies__success": {
-      "message": "S'han el·liminat les cookies per a $DETAILS$",
+      "message": "S'han eliminat les cookies per a $DETAILS$",
       "placeholders": {
         "details": {
           "content": "$1",
@@ -243,7 +243,7 @@
       }
    },
     "status__clear_cookies__error": {
-      "message": "No hi havien cookies a el·liminar"
+      "message": "No hi havien cookies a eliminar"
    },
 
 //Query
@@ -263,7 +263,7 @@
    },
 
     "whiteListed__title": {
-      "message": "Permèsos"
+      "message": "Permesos"
    },
     "whiteListed__info": {
       "message": "Una llista de tots els rastrejadors que has inclòs a la llista blanca."
@@ -277,7 +277,7 @@
       "message": "Tancar"
    },
     "action_cancel": {
-      "message": "Nevermind"
+      "message": "Cancel·lar"
    },
     "action_back": {
       "message": "Enrere"
@@ -297,7 +297,7 @@
       "message": "Desbloquejar"
    },
     "action_clear_cookies": {
-      "message": "El·liminar cookies"
+      "message": "Eliminar cookies"
    },
 
 
@@ -312,7 +312,7 @@
       "message": "Estàs segur/a?"
    },
   "popup__block_critical_domain__text": {
-      "message": "<b>$DETAILS$</b> s'utilitza principalment per a altres finalitats diferents apart del seguiment, però com a efecte secundari, també instal·la cookies de seguiment.<br>El bloqueig d'aquest domini <b>pot fer que alguns llocs web no funcionin correctament</b> ja que poden dependre d'ell. <br><br>Alternativament, pots permetre que aquest domini es carregui i només bloquejar les cookies que carrega.<br>Sempre pots tornar i canviar-ho en cas de cagar-la :)",
+      "message": "<b>$DETAILS$</b> s'utilitza principalment per a altres finalitats diferents a part del seguiment, però com a efecte secundari, també instal·la cookies de seguiment.<br>El bloqueig d'aquest domini <b>pot fer que alguns llocs web no funcionin correctament</b>, ja que poden dependre d'ell. <br><br>Alternativament, pots permetre que aquest domini es carregui i només bloquejar les cookies que carrega.<br>Sempre pots tornar i canviar-ho en cas de cagar-la :)",
       "placeholders": {
         "details": {
           "content": "$1",
@@ -347,7 +347,7 @@
       "message": "Llocs web que utilitzen aquesta cookie:"
    },
     "detailsModal__cookie__list__info": {
-      "message": "A list of all the websites you've visited that use this cookie."
+      "message": "Una llista de tots els llocs web que has visitat que utilitzen aquesta cookie."
    },
 
 //Cookie details
@@ -355,7 +355,7 @@
       "message": "Nom:"
    },
     "detailsModal__cookie__info__expires__label": {
-      "message": "Cadica:"
+      "message": "Caduca:"
    },
     "detailsModal__cookie__info__expires__value__session": {
       "message": "Quan es tanqui la finestra"
@@ -402,7 +402,7 @@
       "message": "Llocs web que utilitzen aquest rastrejador:"
    },
     "detailsModal__tracker__list__info": {
-      "message": "A list of all the websites you've visited that use this tracker."
+      "message": "Una llista de tots els llocs web que has visitat que utilitzen aquest rastrejador."
    },
 
 //----------Website------------>
@@ -483,7 +483,7 @@
 //----------Whitelisted / blocked------------>
 //Item
     "detailsModal__blocked__item__only_cookies": {
-      "message": "Only blocking cookies"
+      "message": "Només bloquejant les cookies"
    },
 /*-------------------------------------------------------
                   SETTINGS
@@ -500,7 +500,7 @@
       "message": "Bloqueja automàticament tots els rastrejadors"
    },
     "settings__auto_block_trackers__info_true": {
-      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir rastredadors individualment a la llista blanca."
+      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir-ne individualment a la llista blanca."
    },
     "settings__auto_block_trackers__info_false": {
       "message": "Quan estigui activat, es bloquejarà la càrrega de tots els rastrejadors coneguts. Per ara, els rastrejadors no es bloquejaran automàticament, però pots bloquejar-los individualment."
@@ -521,7 +521,7 @@
 
 //AutoDelete
     "settings__auto_delete_data__label": {
-      "message": "El·limina automàticament totes les dades del seguiment cada:"
+      "message": "Elimina automàticament totes les dades del seguiment cada:"
    },
     "settings__auto_delete_data__value": {
       "message": "$VALUE$ dies",
@@ -647,7 +647,7 @@
       "message": "Bloqueja automàticament els rastrejadors"
    },
     "setup__autoBlock__option_true__info": {
-      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir rastredadors individualment a la llista blanca"
+      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir-ne individualment a la llista blanca"
    },
     "setup__autoBlock__option_false__title": {
       "message": "Permet tots els seguidors"
@@ -668,7 +668,7 @@
       "message": "Vols amagar la teva ubicació?"
    },
     "setup__hideLocation__info": {
-      "message": "Selecciona si els llocs web que sol·liciten la teva geolocalització (com mapes, etc...) han de rebre una ubicació falsa o no. Independentment del que triis, pots veure l'activitat de la ubicació a l'informe."
+      "message": "Selecciona si els llocs web que sol·liciten la teva geolocalització (com mapes, etc) han de rebre una ubicació falsa o no. Independentment del que triïs, pots veure l'activitat de la ubicació a l'informe."
    },
     "setup__hideLocation__option_true__title": {
       "message": "Amaga la meva ubicació"
@@ -737,10 +737,10 @@
       "message": "min"
    },
     "time_unit__hour": {
-      "message": "hr"
+      "message": "h"
    },
     "time_unit__hours": {
-      "message": "hrs"
+      "message": "h"
    },
     "time_unit__day": {
       "message": "dia"
@@ -783,16 +783,16 @@
 *-------------------------------------------------------*/  
 
     "popup__title": {
-      "message": "About this page"
+      "message": "Sobre aquesta pàgina"
    },
     "popup__found_title": {
-      "message": "Trackers found"
+      "message": "Rastrejadors trobats"
    },
     "popup__blocked_title": {
-      "message": "Trackers blocked"
+      "message": "Rastrejadors bloquejats"
    },
     "popup__info_title": {
-      "message": "Trackers info"
+      "message": "informació dels rastrejadors"
    }
 
 }
