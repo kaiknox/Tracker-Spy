@@ -1,0 +1,129 @@
+<!-- NO DATA MESSAGES -------------------------- -->
+   <h1 ng-if="data.length == 0 && type.data !== 'blocked' || !data" class="graph-noData" style="margin: 0;text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_l' | i18n}}</h1>
+   <p ng-if="data.length == 0 && type.data !== 'blocked' || !data" class="graph-noData" style="margin-top: 0; text-align: center;">{{'noData_info_trackers' | i18n}}</p>
+
+   <h1 ng-if="data.length == 0 && type.data == 'blocked' || !data && type == 'blocked'" class="graph-noData" style="margin: 0;text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_l' | i18n}}</h1>
+   <p ng-if="data.length == 0 && type.data == 'blocked' || !data && type == 'blocked'" class="graph-noData" style="margin-top: 0; text-align: center;">{{'noData_info_blocked' | i18n}}</p>
+<!-- NO DATA MESSAGES END-------------------------- -->
+<div ng-if="data.length > 0" ng-class="{ 'card-md card main-bg grouped hModal' : trigger == 'modal' || trigger == 'secondaryModal', 'card-md card main-bg grouped hPage' : trigger === 'page'}" style="padding: 0; overflow-y: scroll; border-radius: 8px;">
+
+   <!-- -- Data indicator -->
+   <div class="row" style="border-radius:  8px 8px 0 0; position: sticky;top: 0;width: 100%;background: var(--fill-grey-1);backdrop-filter: blur(10px);z-index: 99;padding: 3px 15px 3px 15px;left: 0;">
+      <span ng-if="type.data == 'trackers'" style="width: 100%; line-height: 0;">
+         <div style="display: inline-block; width: 57%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'trackers__list__field__tracker' | i18n}}</span>
+         </div>
+         <div  style="display: inline-block; width: 25%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'trackers__list__field__owner' | i18n}}</span>
+         </div>
+         <div  ng-if="trigger == 'page'" style="display: inline-block; width: 15%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'trackers__list__field__websites' | i18n}}</span>
+         </div>
+         <div  ng-if="trigger !== 'page'" style="display: inline-block; width: 15%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'trackers__list__field__type' | i18n}}</span>
+         </div>
+      </span>
+      <div ng-if="type.data == 'websites'" style="width: 100%; line-height: 0;">
+         <div style="display: inline-block; width: 60%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'websites__list__field__website' | i18n}}</span>
+         </div>
+         <div style="display: inline-block; width: 35%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'websites__list__field__trackers' | i18n}}</span>
+         </div>
+      </div>
+      <div ng-if="type.data == 'cookies'" style="width: 100%; line-height: 0;">
+         <div style="display: inline-block; width: 30%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'cookies__list__field__name' | i18n}}</span>
+         </div>
+         <div style="display: inline-block; width: 60%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'cookies__list__field__value' | i18n}}</span>
+         </div>
+      </div>
+      <div ng-if="type.data == 'blocked' || type.data == 'whiteListed'" style="width: 100%; line-height: 0;">
+         <div style="display: inline-block; width: 70%; text-align: center;">
+            <span style="text-align: center; display: block;">{{'trackers__list__field__tracker' | i18n}}</span>
+         </div>
+      </div>
+   </div>
+   <!-- -- Actual data -->
+
+   <!-- SEARCH BARS -------------------------- -->
+
+   <div style="margin: 15px;" ng-if="(trigger == 'modal' || trigger == 'page') && type.data == 'trackers'" class="input-group">
+      <i class="fas fa-search" style="color:  var(--secondary-label);"></i>
+      <input class="blue" placeholder="{{'trackers__list__search' | i18n}}" type="text" ng-model="$parent.searchTrackers" />
+   </div>
+
+   <div style="margin: 15px;" ng-if="(trigger == 'modal' || trigger == 'page') && type.data == 'websites'" class="input-group">
+      <i class="fas fa-search" style="color:  var(--secondary-label);"></i>
+      <input class="green" placeholder="{{'websites__list__search' | i18n}}" type="text" ng-model="$parent.searchWebsites" />
+   </div>
+   <!-- SEARCH BARS END -------------------------- -->
+
+         <!-- WEBSITES -------------------------- -->
+   <div ng-if="type.data == 'trackers'" ng-click="showModalDetails($event, 'tracker', trigger, item.url)" ng-repeat="item in data | filter:searchList(searchTrackers, type.data)" class="hover website-item" data-tracker="{{$index}}" style="">
+      <div style="padding: 10px 15px 10px 15px; display: flex; align-items: center;">
+            <img height="20px" style="line-height: 0; margin-right: 10px; border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.parentDomain || item.url}}">
+
+            <span style="width: 55%; display: flex;
+    align-items: center;">
+            <i ng-if="item.blocked == true" class="fas fa-ban color-text red" data-toggle="tooltip" title="{{'trackers__list__status__blocked' | i18n}}" style="margin-right: 5px; font-size: 12px;"></i><i ng-if="item.blocked == 'cookies'" class="fas fa-cookie-bite color-text red" data-toggle="tooltip" title="{{'trackers__list__status__blocked_cookies' | i18n}}" style="margin-right: 5px; font-size: 12px;"></i>
+            <span>{{item.url}}</span></span>
+            <span style=" width: 25%; text-align: center;">{{item.owner}}</span>
+            <span ng-if="trigger == 'page'" style="width: 15%; text-align: center;">{{item.websites.length}}</span>
+            <span ng-if="trigger !== 'page'" style="width: 20%; text-align: center;">{{item.type}}</span>
+                  <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+
+      </div>
+      <hr style="margin: 0 15px 0 15px;" ng-if="data.length !== $index + 1">
+   </div>
+
+   <!-- WEBSITES USING TRACKER -------------------------- -->
+   <div ng-if="type.data == 'websites'" ng-click="showModalDetails($event, 'website', trigger, item.website)" ng-repeat="item in data | filter:searchList(searchWebsites, type.data)" class="hover website-item" data-website="{{$index}}">
+      <div style="padding: 10px 15px 10px 15px; display: flex; align-items: center;">
+            <img height="20px" style="margin-right: 10px; border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.website}}">
+            <span style="width: 56%; ">{{item.website}}
+                        <i ng-if="item.info.privacy.location.used == true" class="fas indigo color-text fa-location-arrow" style="font-size: 14px;
+    margin-left: 10px;" data-toggle="tooltip" title="{{'trackers__list__status__location' | i18n}}"></i></span>
+
+            <span style="text-align: center; width: 35%;">{{item.trackers.length}}</span>
+
+         <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+      </div>
+      <hr style="margin: 0 15px 0 15px;" ng-if="data.length !== $index + 1">
+   </div>
+
+   <div ng-if="type.data == 'cookies'" ng-repeat="item in data" class="hover website-item" data-cookie="{{$index}}" ng-click="showModalDetails($event, 'cookie', trigger, item)">
+      <div style="padding: 10px 15px 10px 15px; display: flex; align-items: center;">
+            <i style="margin-right: 10px; border-radius: 100px; font-size: 20px;" class="fas fa-cookie-bite"></i>
+            <div style="width: 30%;">
+            <span style="">{{item.name}}</span>
+         </div>
+            <span style="text-align: center; width: 60%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{item.value}}</span>
+      </div>
+      <hr style="margin: 0 15px 0 15px;" ng-if="data.length !== $index + 1">
+   </div>
+
+
+
+   <!-- BLOCKED -------------------------- -->
+
+
+   <div ng-if="type.viewing == 'blocked' || type.viewing == 'whiteListed'" ng-repeat="item in data" class=" website-item" data-tracker="{{$index}}">
+      <div style="padding: 10px 15px 10px 15px; display: flex; align-items: center;">
+         <div style="width: 80%;">
+            <img height="20px" style="line-height: 0; margin-right: 10px; border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.url}}">
+            <span style="line-height: 0;">{{item.url}} <span class="color-text red" ng-if="item.type == 'CDN'">({{'detailsModal__blocked__item__only_cookies' | i18n}})</span> <i ng-if="type == 'blocked'" class="fas fa-ban color-text red" data-toggle="tooltip" title="Blocked" style="margin-left: 10px;"></i></span>
+         </div>
+
+         <span style="line-height: 0; margin-top: -2px; margin-left: auto;"><button style="padding: 4px 10px;" ng-if="type.viewing == 'blocked'" ng-click="unblockTracker(item.url)"  type="button" class="button secondary-action green rounded"><i class="fas fa-check" style="margin-right: 10px;"></i>{{'action_unblock' | i18n}}</button>
+            <button ng-if="type.viewing == 'whiteListed'" ng-click="attemptBlockTracker(item.url)" type="button" class="button secondary-action red rounded" style="padding: 4px 10px;"><i class="fas fa-ban" style="margin-right: 10px;"></i>{{'action_block' | i18n}}</button></span>
+      </div>
+      <hr style="margin: 0 15px 0 15px;" ng-if="data.length !== $index + 1">
+   </div>
+
+
+
+   <!-- -- Actual data end -->
+</div>
+<!-- ------- SHOW WHEN WIEWING TRACKER (AKA WEBSITES PER TRACKER) -->

@@ -1,0 +1,182 @@
+<div style="margin: auto;">
+                        <h3 style="text-align: center; word-break: break-word;">
+                           <span ng-bind-html="'detailsModal__title' | i18n: [data.title]" class="modal-title" style="color: var(--main-label);"></span>
+                           <i ng-if="data.details.viewing == 'tracker' && data.trackerInfo.blocked == true" class="fas fa-ban color-text red" data-toggle="tooltip" title="{{'trackers__list__status__blocked' | i18n}}" style="margin-left: 5px; font-size: 20px;"></i>
+                           <i ng-if="data.details.viewing == 'tracker' && data.trackerInfo.blocked == 'cookies'" class="fas fa-cookie-bite color-text red" data-toggle="tooltip" title="{{'trackers__list__status__blocked_cookies' | i18n}}" style="margin-left: 5px; font-size: 20px;"></i>
+                        </h3>
+
+                        <div ng-show="data.details.viewing == 'website'">
+                           <div ng-if="data.websiteInfo.privacy.location.used == true" style="text-align: center; margin-bottom: 10px;"><i class="fas indigo color-text fa-location-arrow" style="margin-right: 10px;"></i><span class ="color-text indigo" ng-bind-html="'detailsModal__website__info__privacy__location' | i18n: [data.websiteInfo.privacy.location.timeDif.value, data.websiteInfo.privacy.location.timeDif.unit]">
+                           </span></div>
+
+
+
+
+
+
+
+
+
+
+                     <div class="row" style="width: 70%; margin: auto; margin-top: 15px;">
+                                          <div style="display: flex;" ng-if="data.data.length" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon blue color-bg" style="">
+                              <i class="fas fa-location" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__website__info__trackers__label' | i18n}}</span>
+                              <span class="label-value" style="">
+<ng-pluralize
+    count="data.data.length"
+    when-1="{{'detailsModal__website__info__trackers__value' | i18n: [data.data.length]}}"
+    when-other="{{'detailsModal__website__info__trackers__value_plural' | i18n: [data.data.length]}}">
+</ng-pluralize>
+</span></div>
+                        </div>
+                     </div>
+                                          <div style="display: flex;" ng-if="siteCookies.length" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon orange color-bg" style="">
+                              <i class="fas fa-cookie-bite" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__website__info__cookies__label' | i18n}}</span>
+                              <span class="label-value" style="">
+<ng-pluralize
+    count="data.data.length"
+    when-1="{{'detailsModal__website__info__cookies__value' | i18n: [siteCookies.length]}}"
+    when-other="{{'detailsModal__website__info__cookies__value_plural' | i18n: [siteCookies.length]}}">
+</ng-pluralize>
+</span></div>
+                        </div>
+                     </div>
+                  </div>
+
+
+
+
+
+                        </div>
+                        <div ng-show="data.details.viewing == 'website' && data.trigger !== 'modal'" class="tabs" style="margin: 0 auto 10px auto;">
+                           <div ng-click="changeWebsiteView($event, 'trackers')" class="tab selected" value="regular">
+                              {{'websites__view__trackers' | i18n}}
+                           </div>
+                           <div ng-click="changeWebsiteView($event, 'cookies')" class="tab" value="cookies">
+                              {{'websites__view__cookies' | i18n}}
+                           </div>
+                        </div>
+
+
+                     <div ng-if="data.details.viewing == 'tracker'">
+                        <div style="margin: auto; width: max-content;">
+                           <span style="margin-right: 10px;" ng-repeat="item in data.trackerInfo.info.categories" class="badge">{{item}}</span>
+                        </div>
+
+
+                     <div class="row" style="width: 80%; margin: auto; margin-top: 20px;">
+                     <div style="display: flex;" class="col-md-6 p5" ng-if="data.trackerInfo.info.name">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon blue color-bg" style="">
+                              <i class="fas fa-location" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__tracker__info__name__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.trackerInfo.info.name}}</span></div>
+                        </div>
+                     </div>
+                     <div style="display: flex;" ng-if="data.trackerInfo.info.owner" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon red color-bg" style="">
+                              <i class="fas fa-building" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__tracker__info__owner__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.trackerInfo.info.owner}}</span></div>
+                        </div>
+                     </div>
+                                          <div style="display: flex;" ng-if="data.data.length" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon orange color-bg" style="">
+                              <i class="fas fa-globe" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__tracker__info__foundOn__label' | i18n}}</span>
+                              <span class="label-value" style="">
+<ng-pluralize
+    count="data.data.length"
+    when-1="{{'detailsModal__tracker__info__foundOn__value' | i18n: [data.data.length]}}"
+    when-other="{{'detailsModal__tracker__info__foundOn__value_plural' | i18n: [data.data.length]}}">
+</ng-pluralize>
+</span></div>
+                        </div>
+                     </div>
+                                                         <div style="display: flex;" ng-if="data.trackerInfo.info.parentDomain" class="col-md-6 p5">
+                        <a href="https://{{data.trackerInfo.info.parentDomain}}" target="_blank" class="hr-icon-label hover" style="display: flex;">
+                           <span class="label-icon indigo color-bg" style="">
+                              <i class="fas fa-compass" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__tracker__info__parentDomain__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.trackerInfo.info.parentDomain}}</span></div>
+                        </a>
+                     </div>
+                  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+                     <div ng-if="data.details.viewing == 'cookie'">
+                     <div class="row" style="width: 80%; margin: auto; margin-top: 20px;">
+                     <div style="display: flex;" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon blue color-bg" style="">
+                              <i class="fas fa-cookie-bite" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__cookie__info__name__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.cookieInfo.name}}</span></div>
+                        </div>
+                     </div>
+                     <div style="display: flex;" ng-if="data.cookieInfo.expirationDate" class="col-md-6 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon red color-bg" style="">
+                              <i class="fas fa-calendar-times" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__cookie__info__expires__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.cookieInfo.expirationDate}}</span></div>
+                        </div>
+                     </div>
+
+                      <div style="display: flex;" ng-if="data.cookieInfo.value" class="col-md-12 p5">
+                        <div class="hr-icon-label" style="display: flex;">
+                           <span class="label-icon indigo color-bg" style="">
+                              <i class="fas fa-info" style="color: white; margin-right: 10px;"></i>
+                           </span>
+                           <div class="label-content" style="">
+                              <span class="label-title" style="">{{'detailsModal__cookie__info__value__label' | i18n}}</span>
+                              <span class="label-value" style="">{{data.cookieInfo.value}}</span></div>
+                        </div>
+                     </div>
+                  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+                     </div>

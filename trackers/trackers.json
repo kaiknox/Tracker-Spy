@@ -1,0 +1,11 @@
+[
+	{
+    	"id": 1,
+    	"priority": 3,
+         "action": {
+            "type": "allow"
+         },
+    	"condition": {"urlFilter": "https://s2.googleusercontent.com/s2/favicons?", "resourceTypes": ["image"] }
+	}
+]
+

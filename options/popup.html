@@ -1,0 +1,61 @@
+<!doctype html>
+<html style="width: 300px;" lang="en" ng-app="myapp" ng-controller="popupController as popupCtrl">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <script src="font-awesome/js/all.js" data-auto-replace-svg="false" crossorigin="anonymous"></script>
+      <link href="font-awesome/css/all.css" media="all" rel="stylesheet">
+      <link rel="stylesheet" href="bootstrap.css">
+      <link rel="stylesheet" href="style.css">
+      <title>Report</title>
+   </head>
+   <body class="grouped">
+    
+
+    <div class="container">
+      <h3 style="text-align: center;">{{'popup__title' | i18n}}:</h3>
+                     <div style="margin: auto; margin-bottom: 10px;" class="color-bg green circle-numb">{{trackers.length}}</div>
+            <div ng-if="info.privacy.location.used == true" style="text-align: center; margin-bottom: 10px;"><i class="fas indigo color-text fa-location-arrow" style="margin-right: 10px;"></i><span class ="color-text indigo" ng-bind-html="'detailsModal__website__info__privacy__location' | i18n: [info.privacy.location.timeDif.value, info.privacy.location.timeDif.unit]">
+                           </span></div>
+      <div class="row" style="margin-bottom: 10px;">
+         <div class="col-md-12 col-xs-12 col-sm-12 col-12 p10">
+            <div class="card card-sm grouped" style="margin-bottom: 10px;">
+               <div style="display: flex; flex-direction: row; align-items: center;">
+               <h6 style="margin-bottom: 0;"><i class="fas color-text green fa-location" style="margin-right: 10px;"></i>{{'popup__found_title' | i18n}}: 
+              </h6>
+            <h6 style="margin-left: auto; margin-bottom: 0;" class="color-text green">{{trackers.length}}</h6>
+</div>
+<hr style="margin: 10px 0 10px 0;">
+<div style="display: flex; flex-direction: row; align-items: center;">
+               <h6 style="margin-bottom: 0;"><i class="fas color-text red fa-ban" style="margin-right: 10px;"></i>{{'popup__blocked_title' | i18n}}:
+            </h6>
+               <h6 style="margin-left: auto; margin-bottom: 0;" class="color-text red">{{blocked.length}}</h6>
+               </div>
+            </div>
+         </div>
+         <div class="col-md-12 col-xs-12 col-sm-12 col-12 p10">
+            <div class="card card-sm grouped" style="height: 100%;">
+               <h6><i class="fas color-text blue fa-info-circle" style="margin-right: 10px;"></i>{{'popup__info_title' | i18n}}:</h6>
+               <div style="max-height: 200px; overflow-y: scroll;">
+               <div style="display: flex; align-items: center; column-gap: 10px; padding: 3px; border-radius: 5px;" class="hover" ng-click="goToTracker(item.url)" ng-repeat="item in trackers">
+                  <img height="20px" style="border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.parentDomain}}">
+                  <span style="font-size: 13px;">{{item.url}}</span>
+               </div>
+            </div>
+            </div>
+         </div>
+      </div>
+   </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="../jQuery.js"></script>
+      <script src="angular.js"></script>
+      <script src="app.js"></script>
+      <script src="popper.js"></script>
+      <script src="bootstrap.js"></script>
+      <script src="script.js"></script>
+      <script src="popup.js"></script>
+   </body>
+</html>

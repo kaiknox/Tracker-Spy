@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en" ng-app="myapp" ng-controller="mainController as mainCtrl">
+   <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <script src="font-awesome/js/all.js" data-auto-replace-svg="false" crossorigin="anonymous"></script>
+      <link href="font-awesome/css/all.css" media="all" rel="stylesheet">
+      <link rel="stylesheet" href="bootstrap.css">
+      <link rel="stylesheet" href="style.css">
+      <title>{{'title' | i18n}}</title>
+   </head>
+
+
+   <body class="grouped">
+   <div class="setup-overlay blurry-bg" style="display: none;">
+      <div class="main-bg setup-pannel main-container">
+         <div class="setup-body">
+
+
+            <setup-steps ng-if="showSetup !== 'false'"></setup-steps>
+         </div>
+         <div class="setup-footer blurry-bg">
+            <button type="button" disabled class="button secondary-action blue" id="setup-back"><i class="fas fa-chevron-left" style="margin-right: 7px;"></i>{{'action_back' | i18n}}</button>
+            <button type="button" class="button primary-action blue" id="setup-next">{{'action_next' | i18n}}<i style="margin-left: 7px;" class="fas fa-chevron-right"></i></button>
+         </div>
+      </div>
+   </div>
+
+
+    <!--
+      <div class='x c a'></div>
+      <div class='x c a'></div>
+      <div class='x c a'></div>
+      <div class='x c a'></div>
+      <div class='x c a'></div>
+      <div class='y a c'></div>
+      <div class='y a c'></div>
+      <div class='y a c'></div>
+      <div class='y a c'></div>
+      <div class='y a c'></div>
+    -->
+      <!-- Modal -->
+
+    
+      <div class="modal fade" id="detailsModal" tabindex="-1" role="dialog"  aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document" style="min-height: calc(100% - 3.5rem);">
+            <div class="modal-resizable-content" style="pointer-events: auto; position: relative; width: -webkit-fill-available;">
+               <div class="secondary-details">
+               <div class="modal-header main-bg grouped">
+                  <d-header style="width: 100%;" data="detailsModal2"></d-header>
+               </div>
+
+                  <div class="modal-body secondary-bg grouped">
+                        <div ng-show="detailsModal2.details.viewing == 'website'">
+                           <h5>{{'detailsModal__website__trackers__list__title' | i18n}}</h5>
+                        </div>
+                         <div ng-hide="detailsModal2.details.viewing == 'website'">
+                           <h5>{{'detailsModal__tracker__list__title' | i18n}}</h5>
+                        </div>
+            
+                        <d-list trigger="'secondaryModal'" action="showModalDetails" class="" type="detailsModal2.details" data="detailsModal2.data"></d-list>
+                        </div>
+<div class="modal-footer secondary-bg grouped">
+               <button style="margin-top: 10px;
+    margin-left: 10px;" ng-click="clearCookie(detailsModal2.trackerInfo.cookies, detailsModal2.itemUrl)" ng-if="detailsModal2.details.viewing == 'tracker' && detailsModal2.trackerInfo.cookies" type="button" class="button secondary-action orange"><i class="fas fa-cookie-bite" style="margin-right: 10px;"></i>{{'action_clear_cookies' | i18n}}</button>
+               <button ng-click="attemptBlockTracker(detailsModal2.itemUrl, detailsModal2.trackerInfo.isImportant, detailsModal2.trackerInfo.cookies, $event)" style="margin-top: 10px; margin-left: 10px;" ng-if="detailsModal2.details.viewing == 'tracker' && !detailsModal2.trackerInfo.blocked" type="button" class="button secondary-action red" data-dismiss="modal"><i class="fas fa-ban" style="margin-right: 10px;"></i>{{'action_block' | i18n}}</button>
+               <button ng-click="unblockTracker(detailsModal2.itemUrl)" style="margin-top: 10px; margin-left: 10px;" ng-if="detailsModal2.details.viewing == 'tracker' && detailsModal2.trackerInfo.blocked || detailsModal2.trackerInfo.blocked == false" type="button" class="button secondary-action green"><i class="fas fa-check" style="margin-right: 10px;"></i>{{'action_unblock' | i18n}}</button>
+            <button style="margin-top: 10px; margin-left: 10px;" type="button" class="button primary-action {{detailsModal2.color}}" ng-click="showModalDetails($event, '', 'secondaryModal')">{{'action_close' | i18n}}</button>
+            </div>
+               </div>
+
+               <div class="modal-content main-bg modal-resizable-content" style="overflow: hidden; border-radius: 15px; transform-origin: top;">
+                  <div class="modal-header main-bg grouped" style="border: none;">
+                     <d-header style="width: 100%;" data="detailsModal"></d-header>
+                  </div>
+                  <div class="modal-body secondary-bg grouped">
+                     <!-- ------- SHOW WHEN WIEWING WEBSITE (AKA TRACKERS PER WEBSITE) -->
+
+                        <div class="tab-content">
+                           <div class="tab-section-regular">
+                        <div ng-show="detailsModal.details.viewing == 'website'">
+                           <h5>{{'detailsModal__website__trackers__list__title' | i18n}}</h5>
+                        </div>
+                         <div ng-hide="detailsModal.details.viewing == 'website'">
+                           <h5>{{'detailsModal__'+detailsModal.details.viewing+'__list__title' | i18n}}</h5>
+                           
+                        </div>
+            
+                              <d-list trigger="'modal'" action="showModalDetails" class="" type="detailsModal.details" data="detailsModal.data"></d-list>
+                           </div>
+                           <div class="tab-section-cookies">
+
+                        <h5>{{'detailsModal__website__cookies__list__title' | i18n}}</h5>
+
+                              <d-list trigger="'modal'" action="" class="" type="{viewing: 'website', data: 'cookies'}" data="siteCookies"></d-list>
+                           </div>
+                        </div>
+                  </div>
+                  <div class="modal-footer secondary-bg grouped" style="border: none;">
+                    <button ng-click="clearCookie(detailsModal.trackerInfo.cookies, detailsModal.itemUrl)" ng-if="detailsModal.details.viewing == 'tracker' && detailsModal.trackerInfo.cookies" type="button" class="button secondary-action orange" data-dismiss="modal"><i class="fas fa-cookie-bite" style="margin-right: 10px;"></i>{{'action_clear_cookies' | i18n}}</button>
+                    <button ng-click="attemptBlockTracker(detailsModal.itemUrl, detailsModal.trackerInfo.isImportant, detailsModal.trackerInfo.cookies, $event)" ng-if="detailsModal.details.viewing == 'tracker' && !detailsModal.trackerInfo.blocked" type="button" class="button secondary-action red"><i class="fas fa-ban" style="margin-right: 10px;"></i>{{'action_block' | i18n}}</button>
+                    <button ng-click="unblockTracker(detailsModal.itemUrl)" ng-if="detailsModal.details.viewing == 'tracker' && detailsModal.trackerInfo.blocked || detailsModal.trackerInfo.blocked == false" type="button" class="button secondary-action green" data-dismiss="modal"><i class="fas fa-check" style="margin-right: 10px;"></i>{{'action_unblock' | i18n}}</button>
+
+                     <button type="button" class="button primary-action {{detailsModal.color}}" data-dismiss="modal">{{'action_close' | i18n}}</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog"  aria-hidden="true">
+         <div class="modal-dialog modal-dialog-centered" role="document">
+               <div class="modal-content main-bg" style="overflow: hidden; border-radius: 15px;">
+                  <div class="modal-header" style="border: none; padding-bottom: 0;">
+                     <div>
+                        <h5>{{'settings__title' | i18n}}:</h5>
+                     </div>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+                  <div class="modal-body">
+                     <!-- ------- SHOW WHEN WIEWING WEBSITE (AKA TRACKERS PER WEBSITE) -->
+                     <div>
+                        <h5>{{'settings__trackers_and_data__title' | i18n}}</h5>
+
+                        <div class="card card-sm" style="margin-top: 10px;">
+                           <span style=""><span style="vertical-align: middle;">{{'settings__auto_block_trackers__label' | i18n}}</span>
+
+                                                      <label style="float: right;" class="switch-container">
+                              <input ng-change="updateSettings($event, 'auto-block-trackers')" ng-model="settings.autoBlock.enabled" type="checkbox" checked="checked">
+                              <span class="blue checkmark"></span>
+                           </label>
+                        </span>
+
+                        <div ng-show="settings.autoBlock.enabled" class="" style="margin-top: 10px;">
+                              <label ng-repeat="item in [{value: 'all'}, {value: 'exception'}]" class="radio-container">
+                                 <input value="{{item.value}}" ng-model="settings.autoBlock.type" ng-change="updateSettings($event, 'auto-block-trackers-type')" type="radio" name="autoBlockType">
+                                 <span style="display: inline-block; vertical-align: middle;" class="blue checkmark"></span>
+                                 <span style="display: inline-block; width: calc(100% - 41px);
+                                             margin-left: 10px;
+                                             vertical-align: middle;">
+                                    <span style="color: var(--main-label);">{{'settings__auto_block_trackers__type_'+item.value+'__title' | i18n}}</span>
+                                    <span style="margin-top: 3px; display: block; font-size: 12px;">{{'settings__auto_block_trackers__type_'+item.value+'__info' | i18n}}
+                                    </span>
+                                 </span>
+                                        <hr ng-if="$index == 0" style="width: 90%; margin: auto; margin-top: 5px;
+                                          margin-bottom: 5px;">
+                              </label>
+                    
+                        </div>
+                        </div>
+
+
+                        <span style="padding: 0 10px 0 10px; margin-top: 5px; display: block; font-size: 12px;">{{'settings__auto_block_trackers__info_'+settings.autoBlock.enabled | i18n}}
+                        </span>
+
+                        
+                        <div style="margin-top: 15px;" class="card card-sm">
+
+                           <span style="display: flex; align-items: center;"><span style="vertical-align: middle;">{{'settings__auto_delete_data__label' | i18n}}</span>
+                                                      <select ng-change="updateSettings($event, 'auto-delete-data')" ng-model="settings.autoDelete" style="margin-left: auto;">
+  <option value="30">{{'settings__auto_delete_data__value' | i18n: ['30']}}</option>
+  <option value="20">{{'settings__auto_delete_data__value' | i18n: ['20']}}</option>
+  <option value="15">{{'settings__auto_delete_data__value' | i18n: ['15']}}</option>
+  <option value="10">{{'settings__auto_delete_data__value' | i18n: ['10']}}</option>
+</select>
+                        </span>
+
+
+                     </div>
+                                          <span style="padding: 0 10px 0 10px; margin-top: 5px; display: block; font-size: 12px;">{{'settings__auto_delete_data__info' | i18n : [settings.autoDelete]}}
+                           </span>
+
+
+                           <div class="card card-sm" style="margin-top: 15px;">
+
+                            <span style="display: flex; align-items: center; column-gap: 10px;"><span style="vertical-align: middle;">{{'settings__block_cookies__label' | i18n}}</span>
+                       
+
+                           <label style="margin-left: auto;" class="switch-container">
+                              <input ng-change="updateSettings($event, 'block-cookies')" ng-model="settings.blockCookies" type="checkbox" checked="checked">
+                              <span class="blue checkmark"></span>
+                           </label>
+ </span>
+                        </div>
+
+                           <span style="margin-bottom: 20px; margin-top: 5px; display: block; font-size: 12px; padding: 0 10px 0 10px;">{{'settings__block_cookies__info_'+settings.blockCookies | i18n}}
+                           </span>
+
+
+
+<h5>{{'settings__privacy__title' | i18n}}</h5>
+
+                           <div class="card card-sm" style="margin-top: 10px;">
+
+                            <span style="display: flex; align-items: center; column-gap: 10px;">
+      <span class="color-bg indigo icon-bg" style=""> <i class="fas fa-location-arrow" style=""></i>
+</span>
+  <span>{{'settings__privacy__location__label' | i18n}}</span>
+                       
+
+                           <label style="margin-left: auto;" class="switch-container">
+                              <input ng-change="updateSettings($event, 'location-privacy')" ng-model="settings.privacy.location" type="checkbox" checked="checked">
+                              <span class="blue checkmark"></span>
+                           </label>
+                        </span>
+                        </div>
+                           <span style="padding: 0 10px 0 10px; margin-top: 5px; display: block; font-size: 12px;">{{'settings__privacy__location__info_'+settings.privacy.location | i18n}}
+                           </span>
+
+
+                           <div class="card card-sm" style="margin-top: 15px;">
+
+                            <span style="display: flex; align-items: center; column-gap: 10px;">
+                                    <span class="color-bg blue icon-bg"> <i class="fas fa-laptop"></i>
+</span><span>{{'settings__privacy__UserAgent__label' | i18n}}</span>
+                       
+
+                           <label style="margin-left: auto;" class="switch-container">
+                              <input ng-change="updateSettings($event, 'userAgent-privacy')" ng-model="settings.privacy.userAgent" type="checkbox" checked="checked">
+                              <span class="blue checkmark"></span>
+                           </label>
+ </span>
+                        </div>
+
+                           <span  style="padding: 0 10px 0 10px; margin-bottom: 20px; margin-top: 5px; display: block; font-size: 12px;">
+                              {{'settings__privacy__UserAgent__info_'+settings.privacy.userAgent | i18n}}
+                           </span>
+                        </div>
+
+                  </div>
+                  <div class="modal-footer" style="border: none;">
+                     <button type="button" class="button primary-action blue" data-dismiss="modal">{{'action_close' | i18n}}</button>
+                  </div>
+               </div>
+         </div>
+      </div>
+
+
+
+      <div class="container main-container">
+         <div class="d-flex justify-content-between">
+         <h1>{{'title' | i18n}}</h1>             
+         <div style="height: max-content; margin-top: 10px; width: max-content;" data-toggle="modal" data-target="#settingsModal" class="hover button secondary-action blue rounded">
+              <i class="fas fa-cog" style=""></i>
+              {{'settings__title' | i18n}}
+            </div>
+</div>
+         <div class="row" style="margin-bottom: 20px;">
+            <div class="col-md-4 p10">
+              <div class="card card-md grouped" style="height: 100%; display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;">
+
+
+<div class="canvas-wrap" style="">
+  <canvas id="canvas" width="100" height="100"></canvas>
+  <span id="procent"></span>
+</div><p style="margin: 0;">{{'stats__websites_tracked__info' | i18n: [stats.websitesTracked]}}</p>
+
+              </div>
+            </div>
+            <div class="col-md-4 p10">
+              <div class="card card-md grouped" style="height: 100%; display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;">
+                   <h1 ng-if="!stats.popularTracker" class="graph-noData" style="text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_s' | i18n}}</h1>
+<span ng-if="stats.popularTracker" style="text-align: center;">
+   
+   <span data-toggle="tooltip" data-title="{{'detailsModal__website__list__title' | i18n}}" class="color-text blue" style="font-size: 35px; vertical-align: middle; text-align: center;"><span style="color: inherit;" class="count-increase">{{stats.popularTracker.websites.length}} </span><span class="blue color-text" style="font-size: 13px; color: inherit; display: block; text-align: center; text-transform: uppercase;">{{'stats__popular_tracker__count' | i18n}}</span></span>
+                
+
+
+</span>
+                
+                <span ng-if="stats.popularTracker"  style="">
+                  <h4>{{stats.popularTracker.url}}
+</h4>
+                <p ng-if="stats.popularTracker" style="margin: 0;">{{'stats__popular_tracker__info' | i18n: [stats.popularTracker.url]}}</p>
+             </span>
+              </div>
+            </div>
+
+         <div class="col-md-4 p10">
+
+ <div class="card card-md grouped" style="display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    height: 100%;">
+                   <h1 ng-if="!stats.popularTracker" class="graph-noData" style="text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_s' | i18n}}</h1>
+<span ng-if="stats.popularTracker" style="text-align: center;">
+   
+   <span data-toggle="tooltip" data-title="" class="color-text orange" style="font-size: 35px; vertical-align: middle; text-align: center;"><span style="color: inherit;" class="count-increase">{{stats.cookies.total}}</span><span class="orange color-text" style="font-size: 13px; color: inherit; display: block; text-align: center; text-transform: uppercase;">{{'stats__cookies__count' | i18n}}</span></span>
+                
+
+
+</span>
+                
+                <div style="width: -webkit-fill-available;">
+                  <span>{{'stats__cookies__total' | i18n}}</span>
+                  <div style="margin-top: 3px; line-height: 0;">
+                  <div style="vertical-align: middle; min-width: 8px; width: 0px; transition: all .4s; height: 8px;border-radius: 21px;width: {{(stats.cookies.total / stats.cookies.total) *  80}}%;display: inline-block;" class="color-bg orange"></div> <span class="color-text orange" style="line-height: 0; font-size: 13px; vertical-align: middle;">{{stats.cookies.total}}</span>
+               </div>
+
+                                 <span style="display: block; margin-top: 10px;">{{'stats__cookies__tracking' | i18n}}</span>
+                  <div style="margin-top: 3px; line-height: 0;">
+                  <div style="vertical-align: middle; min-width: 8px; width: 0px; transition: all .4s; height: 8px;border-radius: 21px; display: inline-block; width: {{(stats.cookies.trackers / stats.cookies.total) *  80 + stats.cookies.total % 5}}%;" class="color-bg orange"></div> <span class="color-text orange" style="line-height: 0; font-size: 13px; vertical-align: middle;">{{stats.cookies.trackers}}</span>
+               </div>
+            </div>
+              </div>
+
+
+
+          </div>
+        </div>
+        <div class="row" style="margin-bottom: 20px;">
+          <div class="col-md-6 p10">
+            <div class="card card-md grouped" style="height: 100%;">
+               <div class="row">
+                  <div class="col-md-6 p10" style="border-right: 1px solid var(--separator);">
+
+               <p style="font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 5px;">{{'stats__summary__websites__title' | i18n}}</p>
+
+
+
+                  <div ng-repeat="item in websites.summary.data | limitTo: 4" style="margin-bottom: 10px; line-height: 0;">
+
+                              <span style=""><img style="border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.name}}"></span><span style="margin-left: 10px;">{{item.name}}</span>
+                              <div style="margin-top: 5px;">
+            <span class="graph-bar-hr hide color-bg green" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (websites.summary.maxValue)) * 90}}%"></span>
+
+            <span style="line-height: 0; vertical-align: middle; font-size: 13px;" class="color-text green">{{item.data.length}}</span>
+         </div>
+   </div>
+</div>
+
+
+   <div class="col-md-6 p10">
+               <p style="font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 5px;">{{'stats__summary__trackers__title' | i18n}}</p>
+
+
+                  <div ng-repeat="item in trackers.summary.data | limitTo: 4" style="margin-bottom: 10px; line-height: 0;">
+
+                              <span style=""><img style="border-radius: 100px;" src="https://s2.googleusercontent.com/s2/favicons?domain={{item.name}}"></span><span style="margin-left: 10px;">{{item.name}}</span>
+                              <div style="margin-top: 5px;">
+            <span class="graph-bar-hr hide color-bg blue" style="vertical-align: middle; display: inline-block; margin-top: 0px; height: 8px; border-radius: 15px; width: {{(item.data.length / (trackers.summary.maxValue)) * 90}}%"></span>
+
+            <span style="line-height: 0; vertical-align: middle; font-size: 13px;" class="color-text blue">{{item.data.length}}</span>
+         </div>
+   </div>
+
+
+
+
+          </div>
+          </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 p10" ng-hide="settings.autoBlock.enabled">
+            <div ng-click="showModalDetails($event, 'blocked', 'page')"  class="hover card card-md grouped" style="height: 100%;">
+               <h4 style="position: absolute; top: 10px; right: 10px;" class="red color-text">{{blocked.trackers.length}}</h4>
+
+              <i class="fas red color-text fa-ban" style="font-size: 50px; text-align: center; margin: auto;"></i>
+              <h4 style="text-align: center;">{{'blocked__title' | i18n}}</h4>
+              <p style="text-align: center;">{{'blocked__info' | i18n}}</p>
+            </div>
+          </div>          
+          <div class="col-md-3 p10" ng-show="settings.autoBlock.enabled">
+            <div ng-click="showModalDetails($event, 'whiteListed', 'page')"  class="hover card card-md grouped" style="height: 100%;">
+               <h4 style="position: absolute; top: 10px; right: 10px;" class="green color-text">{{whiteListed.trackers.length}}</h4>
+
+              <i class="fas green color-text fa-check" style="font-size:  50px; text-align: center; margin: auto;"></i>
+              <h4 style="text-align: center;">{{'whiteListed__title' | i18n}}</h4>
+              <p style="text-align: center;">{{'whiteListed__info' | i18n}}</p>
+            </div>
+          </div>
+          <div class="col-md-3 p10">
+  
+
+                        <div class="card card-sm grouped" style="border-radius: 15px; margin-bottom: 20px;">
+            <h5 style="margin-bottom: 3px;"><i class="fas indigo color-text fa-location-arrow" style="margin-right: 10px; vertical-align: middle;"></i><span style="color: inherit; font-weight: inherit; line-height: 0;" ng-if="stats.recentLocationUse.site !== false">{{stats.recentLocationUse.site}}</span></h5>  
+            <p ng-if="stats.recentLocationUse.site == false">{{'stats__privacy__location__noData' | i18n}}</p>
+            <div ng-if="stats.recentLocationUse.site !== false" class="d-flex justify-content-between" style="align-items: center;">             
+
+              <p style="margin-bottom: 0;">{{'privacy__used_location' | i18n}}</p>
+               <p style="margin-bottom: 0; font-weight: 500; min-width: max-content;" class="indigo color-text">
+                  {{'time_difference' | i18n: [stats.recentLocationUse.time.value, stats.recentLocationUse.time.unit]}}
+               </p>
+
+
+</div>
+            </div>
+
+
+  
+
+
+
+
+
+          </div>
+        </div>
+
+
+
+
+
+<br>
+
+
+
+         <div class="row">
+            <div class="col-lg-6 col-md-12 p10">
+               <div class="card card-lg grouped">
+                  <h4>{{'websites__summary__title' | i18n}}</h4>
+                  <p>{{'websites__summary__info' | i18n}}</p>
+                  <!-- ------- GRAPH OF MOST RECENT WEBSITES -->
+                  <d-graph color="green" data="websites.summary.data" max-val="websites.summary.maxValue" id="websites-graph" style="margin:  auto; position: relative;"></d-graph>
+
+
+
+
+                  <!-- ------- END OF WEBSITE GRAPH -->
+                  <br>
+                  <!-- ------- LIST OF ALL THE WEBSITES -->
+                  <div>
+                     <h4 style="float: left;">{{'websites__list__title' | i18n}}</h4>
+                     <h4 style="float: right;" class="green color-text">{{websites.list.data.length}}</h4>
+                  </div>
+                  <p>{{'websites__list__info' | i18n}}</p>
+                  <!-- --- WEBSITE LIST START -->
+                  <d-list go-to="'website'" trigger="'page'" action="showModalDetails" class="" type="{viewing: 'website', data: 'websites'}" data="websites.list.data"></d-list>
+                  <!-- --- WEBSITE LIST END -->
+               </div>
+            </div>
+            <div class="col-lg-6 col-md-12 p10">
+               <div class="card card-lg grouped">
+                  <h4>{{'trackers__summary__title' | i18n}}</h4>
+                  <p>{{'trackers__summary__info' | i18n}}</p>
+                  <!-- ------- GRAPH OF MOST RECENT TRACKERS -->
+                  <d-graph color="blue" data="trackers.summary.data" max-val="trackers.summary.maxValue" id="tracker-graph" style="margin:  auto; position: relative;"></d-graph>
+
+
+
+
+                  <!-- ------- END OF TRACKER GRAPH -->
+                  <br>
+                  <!-- ------- LIST OF ALL THE TRACKERS -->
+                  <div>
+                     <h4 style="float: left;">{{'trackers__list__title' | i18n}}</h4>
+                     <h4 style="float: right;" class="blue color-text">{{trackers.list.data.length}}</h4>
+                  </div>
+                  <p>{{'trackers__list__info' | i18n}}</p>
+                  <!-- --- TRACKER LIST START -->
+                  <d-list go-to="'tracker'" search="customFilter" trigger="'page'" action="showModalDetails" class="" type="{viewing: 'tracker', data: 'trackers'}" data="trackers.list.data"></d-list>
+                  <!-- --- TRACKER LIST END -->
+               </div>
+            </div>
+         </div>
+         <div class="row" style="margin-top: 20px;">
+            <div class="col-md-12 p10">
+               <div class="card card-lg grouped">
+                 <div class="row">
+                     <div class="col-md-6">
+                        <h3>{{'footer__contact__title' | i18n}}</h3>
+<div style="width: max-content;">
+                           <div class="card card-md main-bg grouped" style="display: flex;
+    align-items: center;
+    column-gap: 20px;
+    flex-direction: row;
+    width: max-content;">
+           
+<div>
+   <div style="background: var(--secondary-bg-group); width: 70px; height: 70px; border-radius: 100px;">
+      <img src="https://kaiknox.com/kai.png" style="width: 70px; height: 70px; border-radius: 100px;">
+   </div>
+   <h4 style="text-align: center; margin-top: 5px; margin-bottom: 0;">Kai K</h4>
+</div>
+<div>
+
+                                                 <span class="label-title" style="display: block;
+  font-size: 11px;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-transform: uppercase;">{{'footer__contact__social__title' | i18n}}</span>
+                        <span style="display: flex; margin: auto; margin-bottom: 10px;">
+                           <a href="{{item.url}}" target="_blank" ng-repeat="item in social" class="socialBtn" data-toggle="tooltip" title="{{item.value}}">
+                              <i style="{{item.color}} position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)" class="{{item.icon}}"></i>
+                           </a>
+                     </span>
+
+
+
+
+
+
+  <span class="label-title" style="display: block;
+  font-size: 11px;
+  line-height: 1;
+  margin-bottom: 10px;
+  text-transform: uppercase;">{{'footer__contact__support__title' | i18n}}</span>
+                                         <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{transition: all .5s; padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 15px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;text-decoration: none !important;box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/kaik"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important; color: white;">Buy me a coffee</span></a>
+
+
+</div>
+
+
+
+                              </div>
+
+        </div>
+                     </div>
+                     <div class="col-md-6">
+                        <h3>{{'footer__about__title' | i18n}}</h3>
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div target="_blank" class="hr-icon-label" style="display: flex;">
+                                 <span class="label-icon blue color-bg" style="">
+                                    <i class="fas fa-info" style="color: white; margin-right: 10px;"></i>
+                                 </span>
+                                 <div class="label-content" style="">
+                                    <span class="label-title" style="">{{'footer__about__version__title' | i18n}}</span>
+                                    <span class="label-value" style="">{{extension_version}}</span>
+                                 </div>
+                              </div>
+                           </div>
+
+
+                           <div class="col-md-6">
+                              <a href="https://kaiknox.com/trackerspy" target="_blank" class="hr-icon-label hover" style="display: flex;">
+                                 <span class="label-icon orange color-bg" style="">
+                                    <i class="fas fa-compass" style="color: white; margin-right: 10px;"></i>
+                                 </span>
+                                 <div class="label-content" style="">
+                                    <span class="label-title" style="">{{'footer__about__page__title' | i18n}}</span>
+                                    <span class="label-value" style="">kaiknox.com/trackerspy</span>
+                                 </div>
+                                 <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+                              </a>
+                           </div>
+
+
+                           <div class="col-md-6">
+                              <a target="_blank" class="hr-icon-label hover" style="display: flex;">
+                                 <span class="label-icon indigo color-bg" style="">
+                                    <i class="fas fa-question" style="color: white; margin-right: 10px;"></i>
+                                 </span>
+                                 <div class="label-content" style="">
+                                    <span class="label-title" style="">{{'footer__about__support__title' | i18n}}</span>
+                                    <span class="label-value" style="">{{'footer__about__support__value' | i18n}}</span>
+                                 </div>
+                                 <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+                              </a>
+                           </div>
+
+
+                           <div class="col-md-6">
+                              <a target="_blank" class="hr-icon-label hover" style="display: flex;">
+                                 <span class="label-icon red color-bg" style="">
+                                    <i class="fas fa-hands-helping" style="color: white; margin-right: 10px;"></i>
+                                 </span>
+                                 <div class="label-content" style="">
+                                    <span class="label-title" style="">{{'footer__about__help__title' | i18n}}</span>
+                                    <span class="label-value" style="">{{'footer__about__help__value' | i18n}}</span>
+                                 </div>
+                                 <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+                              </a>
+                           </div>
+                        <div>
+                     </div>
+
+                     </div>
+                                               
+           <div style="margin-top: 5px; display: flex; flex-direction: row; align-items: center; column-gap: 10px; width: -webkit-fill-available; padding: 5px;" class="card card-sm main-bg grouped hover">
+
+
+
+
+<div target="_blank" class="hr-icon-label" style="display: flex; margin-bottom: 0; ">
+                                 <span class="label-icon red color-bg" style="">
+                                    <i class="fas fa-hands-helping" style="color: white; margin-right: 10px;"></i>
+                                 </span>
+                                 <div class="label-content" style="">
+                                    <span class="label-value" style="">{{'footer__contact__credits__title' | i18n}}</span>
+                                 </div>
+                                 <i style="color: var(--secondary-label); margin-left: auto; opacity: 0.5; font-size: 20px;" class="far fa-chevron-right"></i>
+                              </div>
+
+           </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="../jQuery.js"></script>
+      <script src="angular.js"></script>
+      <script src="app.js"></script>
+      <script src="popper.js"></script>
+      <script src="bootstrap.js"></script>
+      <script src="script.js"></script>
+   </body>
+</html>

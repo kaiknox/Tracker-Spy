@@ -1,0 +1,798 @@
+{
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION DESCRIPTIONS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/        
+    "general__description_short": {
+      "message": "Get to know who is tracking you."
+   },
+
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION CONTEXTMENUS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/     
+    "contextMenu__report": {
+      "message": "Informe"
+   },
+    "contextMenu__adInfo": {
+      "message": "Obtener información sobre esto"
+   },
+
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION SETTINGS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/     
+    "title": {
+      "message": "Informe"
+   },
+
+/*-------------------------------------------------------
+                WEBSITES PANNEL
+*-------------------------------------------------------*/     
+//Headers
+    "websites__summary__title": {
+      "message": "Resumen de sitios web"
+   },
+    "websites__summary__info": {
+      "message": "Un resumen de los sitios que has visitado, con el mayor número der rastreadores."
+   },
+    "websites__list__title": {
+      "message": "Lista de sitios web"
+   },
+    "websites__list__info": {
+      "message": "Una lista de todos los sitios web que has visitado, donde se encontraron rastreadores."
+   },
+
+//Field titles in list
+    "websites__list__field__website": {
+      "message": "Sitio"
+   },
+    "websites__list__field__trackers": {
+      "message": "Rastreadores"
+   },
+
+    "cookies__list__field__name": {
+      "message": "Nombre"
+   },
+    "cookies__list__field__value": {
+      "message": "Valor"
+   },
+
+//View options in modal when viewing a website
+    "websites__view__trackers": {
+      "message": "Rastreadores"
+   },
+    "websites__view__cookies": {
+      "message": "Cookies"
+   },
+
+//Search field
+    "websites__list__search": {
+      "message": "Buscar por URL del sitio web"
+   },
+
+//Item status (little icon in list item)
+    "trackers__list__status__location": {
+      "message": "Usó tu ubicación"
+   },
+
+/*-------------------------------------------------------
+                TRACKERS PANNEL
+*-------------------------------------------------------*/ 
+//Headers
+    "trackers__summary__title": {
+      "message": "Resumen de rastreadores"
+   },
+    "trackers__summary__info": {
+      "message": "Un resumen de los rastreadores más utilizados que se han encontrado en los sitios web que has visitado."
+   },
+    "trackers__list__title": {
+      "message": "Lista de rastreadores"
+   },
+    "trackers__list__info": {
+      "message": "Una lista de todos los rastreadores que se han encontrado en los sitios web que has visitado."
+   },
+
+//Field titles in list
+    "trackers__list__field__tracker": {
+      "message": "Rastreador"
+   },
+    "trackers__list__field__owner": {
+      "message": "Propietario"
+   },
+    "trackers__list__field__websites": {
+      "message": "Sitios"
+   },
+    "trackers__list__field__type": {
+      "message": "Tipo"
+   },
+
+//Search field
+    "trackers__list__search": {
+      "message": "Buscar por nombre o URL del rastreador"
+   },
+
+//Item status (little icon in list item)
+    "trackers__list__status__blocked": {
+      "message": "Bloqueado"
+   },
+    "trackers__list__status__blocked_cookies": {
+      "message": "Bloqueado cookies"
+   },
+
+
+/*-------------------------------------------------------
+                STATS SECTION
+*-------------------------------------------------------*/ 
+//Ammount of websites with trackers
+    "stats__websites_tracked__info": {
+      "message": "$DETAILS$% de los sitios que has visitado hasta ahora contienen uno o más rastreadores.",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+
+//Most used tracker
+    "stats__popular_tracker__info": {
+      "message": "$DETAILS$ es el rastreador más común que se ha encontrado en los sitios web que has visitado.",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+    "stats__popular_tracker__count": {
+      "message": "Sitios"
+   },
+//Cookies
+    "stats__cookies__count": {
+      "message": "Cookies"
+   },
+    "stats__cookies__total": {
+      "message": "Total de cookies"
+   },
+    "stats__cookies__tracking": {
+      "message": "Cookies de seguimiento"
+   },
+
+//Data summary   
+    "stats__summary__websites__title": {
+      "message": "Top sitios webs"
+   },
+    "stats__summary__trackers__title": {
+      "message": "Top rastreadores"
+   },
+
+//Location  
+    "stats__privacy__location__noData": {
+      "message": "Los sitios que accedan a tu ubicación aparecerán aquí."
+   },
+
+
+
+    "noData_title_s": {
+      "message": "Sin datos"
+   },
+    "noData_title_l": {
+      "message": "Nada a ver aquí..."
+   },
+    "noData_info_trackers": {
+      "message": "Empieza a visitar sitios para ver datos relevantes."
+   },
+    "noData_info_blocked": {
+      "message": "Empieza a bloquear rastreadores para verlos aquí."
+   },
+
+
+
+
+/*-------------------------------------------------------
+                STATUS MESSAGES
+*-------------------------------------------------------*/ 
+//Block
+    "status__block__success": {
+      "message": "Rastreador bloqueado con éxito"
+   },
+    "status__block__success_all": {
+      "message": "Los rastreadores se bloquearon con éxito"
+   },
+
+    "status__block__error": {
+      "message": "Hubo un problema al bloquear este rastreador"
+   },
+    "status__block__error_all": {
+      "message": "Algunos rastreadores no se pudieron bloquear. Se han añadido en la lista blanca"
+   },
+
+    "status__block__unknown": {
+      "message": "No se pueden bloquear rastreadores desconocidos"
+   },
+
+//Unblock
+   "status__unblock__success": {
+      "message": "Rastreador desbloqueado con éxito"
+   },
+    "status__unblock__error": {
+      "message": "Hubo un problema al desbloquear este rastreador"
+   },
+
+//Cookies
+    "status__block_cookies__success": {
+      "message": "Se han bloqueado las cookies para esta URL"
+   },
+    "status__clear_cookies__success": {
+      "message": "Se han eliminado con éxito las cookies para $DETAILS$",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+    "status__clear_cookies__error": {
+      "message": "No habían cookies para borrar"
+   },
+
+//Query
+    "status__search_query__error": {
+      "message": "No había nada coincidiendo con tu búsqueda"
+   },
+
+
+
+//------Blocked / Whitelisted--------->
+
+    "blocked__title": {
+      "message": "Bloqueados"
+   },
+    "blocked__info": {
+      "message": "Una lista de todos los rastreadores que has bloqueado para que no carguen en sitios web."
+   },
+
+    "whiteListed__title": {
+      "message": "Permitidos"
+   },
+    "whiteListed__info": {
+      "message": "Una lista de todos los rastreadores que has incluido en la lista blanca."
+   },
+
+/*-------------------------------------------------------
+                ACTION BUTTONS
+*-------------------------------------------------------*/ 
+//Main actions
+    "action_close": {
+      "message": "Cerrar"
+   },
+    "action_cancel": {
+      "message": "Déjalo"
+   },
+    "action_back": {
+      "message": "Atrás"
+   },
+    "action_next": {
+      "message": "Siguiente"
+   },
+    "action_finish": {
+      "message": "Terminar"
+   },
+
+//Block actions
+    "action_block": {
+      "message": "Bloquear"
+   },
+    "action_unblock": {
+      "message": "Desbloquear"
+   },
+    "action_clear_cookies": {
+      "message": "Eliminar cookies"
+   },
+
+
+
+
+
+/*-------------------------------------------------------
+                    POPUPS
+*-------------------------------------------------------*/ 
+//Block cdn
+  "popup__block_critical_domain__title": {
+      "message": "¿Estas seguro/a?"
+   },
+  "popup__block_critical_domain__text": {
+      "message": "<b>$DETAILS$</b> se usa principalmente para otros fines aparte del seguimiento, pero como efecto secundario, también instala cookies de seguimiento.<br>El bloqueo de este dominio <b>puede hacer que algunos sitios web no funcionen correctamente</b>, ya que pueden depender de él. <br><br> Alternativamente, puedes permitir que este dominio se cargue y solo bloquear las cookies que carga. <br>Siempre puedes regresar y cambiarlo en caso de que te equivoques :)",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+    "popup__block_critical_domain__action__block_anyway": {
+      "message": "Bloquear igualmente"
+   },
+    "popup__block_critical_domain__action__clear_cookies": {
+      "message": "Solo bloquea las cookies"
+   },
+
+
+/*-------------------------------------------------------
+                  DETAILS MODAL
+*-------------------------------------------------------*/ 
+    "detailsModal__title": {
+      "message": "Detalles para $DETAILS$",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+
+//----------Cookie------------>
+//Data list
+    "detailsModal__cookie__list__title": {
+      "message": "Sitios usando esta cookie:"
+   },
+    "detailsModal__cookie__list__info": {
+      "message": "Una lista de todos los sitios web que has visitado que usan esta cookie."
+   },
+
+//Cookie details
+    "detailsModal__cookie__info__name__label": {
+      "message": "Nombre:"
+   },
+    "detailsModal__cookie__info__expires__label": {
+      "message": "Expira:"
+   },
+    "detailsModal__cookie__info__expires__value__session": {
+      "message": "Cuando se cierre la ventana"
+   },
+    "detailsModal__cookie__info__value__label": {
+      "message": "Valor:"
+   },
+
+//----------Tracker------------>
+//Details
+    "detailsModal__tracker__info__name__label": {
+      "message": "Nombre:"
+   },
+    "detailsModal__tracker__info__owner__label": {
+      "message": "Propietario:"
+   },
+    "detailsModal__tracker__info__foundOn__label": {
+      "message": "Encontrado en:"
+   },
+    "detailsModal__tracker__info__foundOn__value": {
+      "message": "$VALUE$ sitio",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__tracker__info__foundOn__value_plural": {
+      "message": "$VALUE$ sitios",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+    "detailsModal__tracker__info__parentDomain__label": {
+      "message": "Dominio principal:"
+   },
+
+//Data list
+    "detailsModal__tracker__list__title": {
+      "message": "Sitios usando este rastreador:"
+   },
+    "detailsModal__tracker__list__info": {
+      "message": "Una lista de todos los sitios web que has visitado que usan este rastreador."
+   },
+
+//----------Website------------>
+//Details
+    "detailsModal__website__info__privacy__location": {
+      "message": "Usó tu ubicación <b>hace $VALUE$ $UNIT$</b>",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "1"
+        },
+        "unit": {
+          "content": "$2",
+          "example": "minute"
+        }
+      }
+   },
+  "detailsModal__website__info__trackers__label": {
+      "message": "Rastreadores:"
+   },
+  "detailsModal__website__info__trackers__value": {
+      "message": "$VALUE$ rastreador",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__trackers__value_plural": {
+      "message": "$VALUE$ rastreadores",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__cookies__label": {
+      "message": "Cookies:"
+   },
+  "detailsModal__website__info__cookies__value": {
+      "message": "$VALUE$ cookie",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__cookies__value_plural": {
+      "message": "$VALUE$ cookies",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+
+//Data list
+    "detailsModal__website__trackers__list__title": {
+      "message": "Rastreadores encontrados en este sitio:"
+   },
+    "detailsModal__website__trackers__list__info": {
+      "message": "Una lista de todos los rastreadores encontrados en esta página."
+   },
+
+    "detailsModal__website__cookies__list__title": {
+      "message": "Cookies encontrados en este sitio:"
+   },
+    "detailsModal__website__cookies__list__info": {
+      "message": "Una lista de todas las cookies encontrados en esta página."
+   },
+
+
+
+//----------Whitelisted / blocked------------>
+//Item
+    "detailsModal__blocked__item__only_cookies": {
+      "message": "Solo bloqueando cookies"
+   },
+/*-------------------------------------------------------
+                  SETTINGS
+*-------------------------------------------------------*/ 
+   "settings__title": {
+      "message": "Ajustes"
+   },
+//----------Trackers & data------------
+    "settings__trackers_and_data__title": {
+      "message": "Rastreadores y datos:"
+   },
+//AutoBlock
+    "settings__auto_block_trackers__label": {
+      "message": "Bloquea automáticamente todos los rastreadores conocidos"
+   },
+    "settings__auto_block_trackers__info_true": {
+      "message": "Se bloqueará la carga de los rastreadores conocidos. Puedes añadir rastreadores individualmente en la lista blanca."
+   },
+    "settings__auto_block_trackers__info_false": {
+      "message": "Cuando esté activado, se bloqueará la carga de todos los rastreadores conocidos. Por ahora, los rastreadores no se bloquearán automáticamente, pero puedes bloquearlos individualmente."
+   },
+//AutoBlock type
+    "settings__auto_block_trackers__type_all__title": {
+      "message": "Bloquea todos los rastreadores"
+   },
+    "settings__auto_block_trackers__type_all__info": {
+      "message": "Bloquear la carga de totos los rastreadores conocidos. Puedes manualmente añadirlos de forma individual en la lista blanca."
+   },
+    "settings__auto_block_trackers__type_exception__title": {
+      "message": "Bloquea todos los rastreadores excepto CDNs"
+   },
+    "settings__auto_block_trackers__type_exception__info": {
+      "message": "Solo permitir URLs que no te rastreen como un propósito principal, ya que también tienen otros usos, de los que los sitios web pueden depender para funcionar correctamente. En cambio, las cookies establecidas por estos serán bloqueadas."
+   },
+
+//AutoDelete
+    "settings__auto_delete_data__label": {
+      "message": "Elimina los datos recopilados cada:"
+   },
+    "settings__auto_delete_data__value": {
+      "message": "$VALUE$ dias",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+    "settings__auto_delete_data__info": {
+      "message": "Todos los datos recopilados sobre los rastreadores en sitios web que has visitado se eliminarán automáticamente cada $VALUE$ días.",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+
+//Block Cookies
+    "settings__block_cookies__label": {
+      "message": "Evitar que las cookies se establezcan y envíen a sitios web"
+   },
+    "settings__block_cookies__info_true": {
+      "message": "Se evitará automáticamente que se establezcan y se envíen cookies a los sitios web."
+   },
+    "settings__block_cookies__info_false": {
+      "message": "Cuando esté activado, se evitará que las cookies se establezcan y se envíen a los sitios web. Por ahora, se permitirán todas las cookies."
+   },
+
+
+//----------Privacy------------
+   "settings__privacy__title": {
+      "message": "Privacidad:"
+   },
+//Hilde location
+    "settings__privacy__location__label": {
+      "message": "Ocultar mi ubicación de los sitios web"
+   },
+    "settings__privacy__location__info_true": {
+      "message": "Los sitios web que soliciten tu geolocalización recibirán una ubicación falsa aleatoria en lugar de la tuya real."
+   },
+    "settings__privacy__location__info_false": {
+      "message": "Cuando esté habilitado, los sitios web que soliciten tu geolocalización recibirán una ubicación falsa en lugar de la real. Por ahora, se usará tu ubicación real."
+   },
+//Hide UserAgent
+    "settings__privacy__userAgent__label": {
+      "message": "Ocultar mi informacion sobre el userAgent"
+   },
+    "settings__privacy__userAgent__info_true": {
+      "message": "Los sitios web recibirán información falsa sobre tu navegador y dispositivo, en lugar de la tuya real."
+   },
+    "settings__privacy__userAgent__info_false": {
+      "message": "Cuando está habilitado, los sitios web recibirán información falsa sobre tu navegador y dispositivo, en lugar de la tuya real. Por ahora, las páginas podrán ver tu información real."
+   },
+
+
+/*-------------------------------------------------------
+                  FOOTER
+*-------------------------------------------------------*/ 
+//----------Contact------------
+    "footer__contact__title": {
+      "message": "Contacto:"
+   },
+    "footer__contact__social__title": {
+      "message": "Sígueme:"
+   },
+    "footer__contact__support__title": {
+      "message": "Apoyarme:"
+   },
+
+    "footer__contact__credits__title": {
+      "message": "Créditos"
+   },
+
+//----------About------------
+    "footer__about__title": {
+      "message": "Acerca de:"
+   },
+    "footer__about__version__title": {
+      "message": "Versión:"
+   },
+    "footer__about__page__title": {
+      "message": "Pagina principal:"
+   },
+    "footer__about__support__title": {
+      "message": "Soporte:"
+   },
+    "footer__about__support__value": {
+      "message": "Soporte de contacto"
+   },
+    "footer__about__help__title": {
+      "message": "¿Quiero ayudar?"
+   },
+    "footer__about__help__value": {
+      "message": "Contribuir"
+   },
+    "footer__about__about__title": {
+      "message": "Acerca de Tracker Spy:"
+   },
+
+
+
+/*-------------------------------------------------------
+                  SETUP
+*-------------------------------------------------------*/ 
+    "setup__welcome__title": {
+      "message": "¡Bienvenido/a!"
+   },
+    "setup__welcome__info": {
+      "message": "¡Bienvenido/a! Ahora pasarás por unos pasos rápidos para ayudarte a configurar las cosas. Presiona siguiente para continuar."
+   },
+
+//----------AutoBlock------------>
+    "setup__autoBlock__title": {
+      "message": "¿Te gustaría bloquear rastreadores automáticamente?"
+   },
+    "setup__autoBlock__info": {
+      "message": "Selecciona si deseas bloquear automáticamente rastreadores conocidos o no."
+   },
+    "setup__autoBlock__option_true__title": {
+      "message": "Bloquea rastreadores automáticamente"
+   },
+    "setup__autoBlock__option_true__info": {
+      "message": "Se bloqueará la carga de todos los rastreadores conocidos. Puedes añadir rastreadores individualmente en la lista blanca."
+   },
+    "setup__autoBlock__option_false__title": {
+      "message": "Permite todos los rastreadores"
+   },
+    "setup__autoBlock__option_false__info": {
+      "message": "Los rastreadores cargarán como normal, y no se bloquearán automáticamente, pero puedes bloquearlos individualmente."
+   },
+//----------Auto Delete------------>
+    "setup__autoDelete__title": {
+      "message": "¿Con qué frecuencia se deben eliminar los datos recopilados?"
+   },
+    "setup__autoDelete__info": {
+      "message": "Selecciona la frecuencia con la que deseas que se eliminen todos los datos recopilados sobre las páginas que has visitado, los rastreadores encontrados, etc..."
+   },
+
+//----------Hide location------------>
+    "setup__hideLocation__title": {
+      "message": "¿Te gustaría ocultar tu ubicación?"
+   },
+    "setup__hideLocation__info": {
+      "message": "Selecciona si los sitios web que solicitan tu geolocalización (como mapas, etc...) deben recibir una ubicación falsa o no. Independientemente de lo que elijas, puedes ver la actividad de la ubicación en el informe."
+   },
+    "setup__hideLocation__option_true__title": {
+      "message": "Ocultar mi ubicación"
+   },
+    "setup__hideLocation__option_true__info": {
+      "message": "Los sitios web que soliciten tu geolocalización recibirán una falsa en lugar de la tuysa real."
+   },
+    "setup__hideLocation__option_false__title": {
+      "message": "Usar mi ubicación real"
+   },
+    "setup__hideLocation__option_false__info": {
+      "message": "Los sitios web que soliciten tu geolocalización recibirán la tuya real."
+   },
+
+//----------Hide UserAgent------------>
+    "setup__hideUserAgent__title": {
+      "message": "¿Te gustaría ocultar tu UserAgent?"
+   },
+    "setup__hideUserAgent__info": {
+      "message": "Selecciona si los sitios web que leen la información de tu navegador y dispositivo deben recibir una falsa."
+   },
+    "setup__hideUserAgent__option_true__title": {
+      "message": "Ocultar mi UserAgent"
+   },
+    "setup__hideUserAgent__option_true__info": {
+      "message": "Los sitios web recibirán información falsa sobre tu navegador y dispositivo, en lugar de la real."
+   },
+    "setup__hideUserAgent__option_false__title": {
+      "message": "Usar mi UserAgent real"
+   },
+    "setup__hideUserAgent__option_false__info": {
+      "message": "Los sitios web recibirán la información real sobre tu navegador y dispositivo."
+   },
+
+//----------Search tip------------>
+    "setup__search__title": {
+      "message": "Busca rastreadores encontrados"
+   },
+    "setup__search__info": {
+      "message": "Puedes usar la barra de búsqueda de Chrome para buscar rastreadores encontrados, y se te mostrará información relevante sobre ese rastreador."
+   },
+
+//----------End ------------>
+    "setup__end__title": {
+      "message": "¡Configuración completa!"
+   },
+    "setup__end__info": {
+      "message": "¡La configuración ya está completa! Ahora puedes comenzar a usar la extensión."
+   },
+
+
+
+/*-------------------------------------------------------
+                  OTHER
+*-------------------------------------------------------*/ 
+    "time_unit__second": {
+      "message": "seg"
+   },
+    "time_unit__seconds": {
+      "message": "segs"
+   },
+    "time_unit__minute": {
+      "message": "min"
+   },
+    "time_unit__minutes": {
+      "message": "mins"
+   },
+    "time_unit__hour": {
+      "message": "hr"
+   },
+    "time_unit__hours": {
+      "message": "hrs"
+   },
+    "time_unit__day": {
+      "message": "dia"
+   },
+    "time_unit__days": {
+      "message": "dias"
+   },
+
+    "time_difference": {
+      "message": "hace $VALUE$ $UNIT$",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "1"
+        },
+        "unit": {
+          "content": "$2",
+          "example": "minute"
+        }
+      }
+   },
+
+    "privacy__used_location": {
+      "message": "Usó tu ubicación",
+      "placeholders": {
+        "item": {
+          "content": "$1",
+          "example": "1"
+        }
+      }
+   },
+
+ 
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                  EXTENSION POPUP
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/  
+
+    "popup__title": {
+      "message": "Acerca de esta pagina"
+   },
+    "popup__found_title": {
+      "message": "Rastreadores encontrados"
+   },
+    "popup__blocked_title": {
+      "message": "Rastreadores bloqueados"
+   },
+    "popup__info_title": {
+      "message": "Información de los rastreadores"
+   }
+
+}

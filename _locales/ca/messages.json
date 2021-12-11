@@ -1,0 +1,798 @@
+{
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION DESCRIPTIONS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/        
+    "general__description_short": {
+      "message": "Get to know who is tracking you."
+   },
+
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION CONTEXTMENUS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/     
+    "contextMenu__report": {
+      "message": "Informe"
+   },
+    "contextMenu__adInfo": {
+      "message": "Obtenir informació sobre aquest URL"
+   },
+
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                EXTENSION SETTINGS
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/     
+    "title": {
+      "message": "Informe"
+   },
+
+/*-------------------------------------------------------
+                WEBSITES PANNEL
+*-------------------------------------------------------*/     
+//Headers
+    "websites__summary__title": {
+      "message": "Resum de llocs web"
+   },
+    "websites__summary__info": {
+      "message": "Un resum dels llocs web que has visitat, amb el major número de rastrejadors."
+   },
+    "websites__list__title": {
+      "message": "Llista de llocs web"
+   },
+    "websites__list__info": {
+      "message": "Una llista de tots els llocs web que has visitat, on s'han trobat rastrejadors."
+   },
+
+//Field titles in list
+    "websites__list__field__website": {
+      "message": "Lloc web"
+   },
+    "websites__list__field__trackers": {
+      "message": "Rastrejadors"
+   },
+
+    "cookies__list__field__name": {
+      "message": "Nom"
+   },
+    "cookies__list__field__value": {
+      "message": "Valor"
+   },
+
+//View options in modal when viewing a website
+    "websites__view__trackers": {
+      "message": "Rastrejadors"
+   },
+    "websites__view__cookies": {
+      "message": "Cookies"
+   },
+
+//Search field
+    "websites__list__search": {
+      "message": "Cerca per URL del lloc web"
+   },
+
+//Item status (little icon in list item)
+    "trackers__list__status__location": {
+      "message": "Ha usat la teva ubicació"
+   },
+
+/*-------------------------------------------------------
+                TRACKERS PANNEL
+*-------------------------------------------------------*/ 
+//Headers
+    "trackers__summary__title": {
+      "message": "Resum dels rastrejadors"
+   },
+    "trackers__summary__info": {
+      "message": "Un resum dels rastrejadors més utilitzats que es troben als llocs web que has visitat."
+   },
+    "trackers__list__title": {
+      "message": "Llista de rastrejadors"
+   },
+    "trackers__list__info": {
+      "message": "Una llista de tots els rastrejadors trobats als llocs web que has visitat."
+   },
+
+//Field titles in list
+    "trackers__list__field__tracker": {
+      "message": "Rastrejador"
+   },
+    "trackers__list__field__owner": {
+      "message": "Propietari"
+   },
+    "trackers__list__field__websites": {
+      "message": "Llocs"
+   },
+    "trackers__list__field__type": {
+      "message": "Tipos"
+   },
+
+//Search field
+    "trackers__list__search": {
+      "message": "Cerca el nom o l'URL del rastrejador"
+   },
+
+//Item status (little icon in list item)
+    "trackers__list__status__blocked": {
+      "message": "Bloquejat"
+   },
+    "trackers__list__status__blocked_cookies": {
+      "message": "Bloquejat cookies"
+   },
+
+
+/*-------------------------------------------------------
+                STATS SECTION
+*-------------------------------------------------------*/ 
+//Ammount of websites with trackers
+    "stats__websites_tracked__info": {
+      "message": "$DETAILS$% dels llocs web que has visitat fins ara contenen un o més rastrejadors.",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+
+//Most used tracker
+    "stats__popular_tracker__info": {
+      "message": "$DETAILS$ és el rastrejador més comú trobat als llocs web que has visitat.",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+    "stats__popular_tracker__count": {
+      "message": "Llocs"
+   },
+//Cookies
+    "stats__cookies__count": {
+      "message": "Cookies"
+   },
+    "stats__cookies__total": {
+      "message": "Total de cookies"
+   },
+    "stats__cookies__tracking": {
+      "message": "Cookies de seguiment"
+   },
+
+//Data summary   
+    "stats__summary__websites__title": {
+      "message": "Top pàgines"
+   },
+    "stats__summary__trackers__title": {
+      "message": "Top rastrejadors"
+   },
+
+//Location  
+    "stats__privacy__location__noData": {
+      "message": "Els llocs que accedeixin a la teva ubicació es mostraran aquí."
+   },
+
+
+
+    "noData_title_s": {
+      "message": "Sense dades"
+   },
+    "noData_title_l": {
+      "message": "Res a veure aquí..."
+   },
+    "noData_info_trackers": {
+      "message": "Comença a visitar llocs web per veure dades rellevants."
+   },
+    "noData_info_blocked": {
+      "message": "Comença a bloquejar els rastrejadors per veure'ls aquí."
+   },
+
+
+
+
+/*-------------------------------------------------------
+                STATUS MESSAGES
+*-------------------------------------------------------*/ 
+//Block
+    "status__block__success": {
+      "message": "Rastrejador bloquejat amb èxit"
+   },
+    "status__block__success_all": {
+      "message": "Tots els rastrejadors s'han bloquejat amb èxit"
+   },
+
+    "status__block__error": {
+      "message": "Hi ha hagut un problema en bloquejar aquest rastrejador"
+   },
+    "status__block__error_all": {
+      "message": "Alguns rastrejadors no s'han pogut bloquejar. S'han afegit a la llista blanca"
+   },
+
+    "status__block__unknown": {
+      "message": "Els rastrejadors desconeguts no es poden bloquejar"
+   },
+
+//Unblock
+   "status__unblock__success": {
+      "message": "Rastrejador desbloquejat amb èxit"
+   },
+    "status__unblock__error": {
+      "message": "Hi ha hagut un problema en desbloquejar aquest rastrejador"
+   },
+
+//Cookies
+    "status__block_cookies__success": {
+      "message": "S'han bloquejat les cookies per a aquest URL"
+   },
+    "status__clear_cookies__success": {
+      "message": "S'han el·liminat les cookies per a $DETAILS$",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+    "status__clear_cookies__error": {
+      "message": "No hi havien cookies a el·liminar"
+   },
+
+//Query
+    "status__search_query__error": {
+      "message": "No hi ha res coincidint amb la teva cerca"
+   },
+
+
+
+//------Blocked / Whitelisted--------->
+
+    "blocked__title": {
+      "message": "Bloquejats"
+   },
+    "blocked__info": {
+      "message": "Una llista de tots els rastrejadors que has bloquejat de carregar als llocs web."
+   },
+
+    "whiteListed__title": {
+      "message": "Permèsos"
+   },
+    "whiteListed__info": {
+      "message": "Una llista de tots els rastrejadors que has inclòs a la llista blanca."
+   },
+
+/*-------------------------------------------------------
+                ACTION BUTTONS
+*-------------------------------------------------------*/ 
+//Main actions
+    "action_close": {
+      "message": "Tancar"
+   },
+    "action_cancel": {
+      "message": "Nevermind"
+   },
+    "action_back": {
+      "message": "Enrere"
+   },
+    "action_next": {
+      "message": "Següent"
+   },
+    "action_finish": {
+      "message": "Acabar"
+   },
+
+//Block actions
+    "action_block": {
+      "message": "Bloquejar"
+   },
+    "action_unblock": {
+      "message": "Desbloquejar"
+   },
+    "action_clear_cookies": {
+      "message": "El·liminar cookies"
+   },
+
+
+
+
+
+/*-------------------------------------------------------
+                    POPUPS
+*-------------------------------------------------------*/ 
+//Block cdn
+  "popup__block_critical_domain__title": {
+      "message": "Estàs segur/a?"
+   },
+  "popup__block_critical_domain__text": {
+      "message": "<b>$DETAILS$</b> s'utilitza principalment per a altres finalitats diferents apart del seguiment, però com a efecte secundari, també instal·la cookies de seguiment.<br>El bloqueig d'aquest domini <b>pot fer que alguns llocs web no funcionin correctament</b> ja que poden dependre d'ell. <br><br>Alternativament, pots permetre que aquest domini es carregui i només bloquejar les cookies que carrega.<br>Sempre pots tornar i canviar-ho en cas de cagar-la :)",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+    "popup__block_critical_domain__action__block_anyway": {
+      "message": "Bloqueja igualment"
+   },
+    "popup__block_critical_domain__action__clear_cookies": {
+      "message": "Només bloqueja cookies"
+   },
+
+
+/*-------------------------------------------------------
+                  DETAILS MODAL
+*-------------------------------------------------------*/ 
+    "detailsModal__title": {
+      "message": "Detalls per a $DETAILS$",
+      "placeholders": {
+        "details": {
+          "content": "$1",
+          "example": "google-analytics.com"
+        }
+      }
+   },
+
+//----------Cookie------------>
+//Data list
+    "detailsModal__cookie__list__title": {
+      "message": "Llocs web que utilitzen aquesta cookie:"
+   },
+    "detailsModal__cookie__list__info": {
+      "message": "A list of all the websites you've visited that use this cookie."
+   },
+
+//Cookie details
+    "detailsModal__cookie__info__name__label": {
+      "message": "Nom:"
+   },
+    "detailsModal__cookie__info__expires__label": {
+      "message": "Cadica:"
+   },
+    "detailsModal__cookie__info__expires__value__session": {
+      "message": "Quan es tanqui la finestra"
+   },
+    "detailsModal__cookie__info__value__label": {
+      "message": "Valor:"
+   },
+
+//----------Tracker------------>
+//Details
+    "detailsModal__tracker__info__name__label": {
+      "message": "Nom:"
+   },
+    "detailsModal__tracker__info__owner__label": {
+      "message": "Propietari:"
+   },
+    "detailsModal__tracker__info__foundOn__label": {
+      "message": "Trobat en:"
+   },
+    "detailsModal__tracker__info__foundOn__value": {
+      "message": "$VALUE$ lloc",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__tracker__info__foundOn__value_plural": {
+      "message": "$VALUE$ llocs",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+    "detailsModal__tracker__info__parentDomain__label": {
+      "message": "Domini principal:"
+   },
+
+//Data list
+    "detailsModal__tracker__list__title": {
+      "message": "Llocs web que utilitzen aquest rastrejador:"
+   },
+    "detailsModal__tracker__list__info": {
+      "message": "A list of all the websites you've visited that use this tracker."
+   },
+
+//----------Website------------>
+//Details
+    "detailsModal__website__info__privacy__location": {
+      "message": "Va utilitzar la teva ubicació <b>fa $VALUE$ $UNIT$</b>",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "1"
+        },
+        "unit": {
+          "content": "$2",
+          "example": "minute"
+        }
+      }
+   },
+  "detailsModal__website__info__trackers__label": {
+      "message": "Rastrejadors:"
+   },
+  "detailsModal__website__info__trackers__value": {
+      "message": "$VALUE$ rastrejador",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__trackers__value_plural": {
+      "message": "$VALUE$ rastrejadors",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__cookies__label": {
+      "message": "Cookies:"
+   },
+  "detailsModal__website__info__cookies__value": {
+      "message": "$VALUE$ cookie",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+  "detailsModal__website__info__cookies__value_plural": {
+      "message": "$VALUE$ cookies",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "25"
+        }
+      }
+   },
+
+//Data list
+    "detailsModal__website__trackers__list__title": {
+      "message": "Rastrejadors trobats en aquesta pàgina:"
+   },
+    "detailsModal__website__trackers__list__info": {
+      "message": "A list of all the trackers found on this page."
+   },
+
+    "detailsModal__website__cookies__list__title": {
+      "message": "Cookies que es troben en aquesta pàgina:"
+   },
+    "detailsModal__website__cookies__list__info": {
+      "message": "A list of all the cookies found on this page. Don't worry, not all of them are bad!"
+   },
+
+
+
+//----------Whitelisted / blocked------------>
+//Item
+    "detailsModal__blocked__item__only_cookies": {
+      "message": "Only blocking cookies"
+   },
+/*-------------------------------------------------------
+                  SETTINGS
+*-------------------------------------------------------*/ 
+   "settings__title": {
+      "message": "Configuració"
+   },
+//----------Trackers & data------------
+    "settings__trackers_and_data__title": {
+      "message": "Rastrejadors i dades:"
+   },
+//AutoBlock
+    "settings__auto_block_trackers__label": {
+      "message": "Bloqueja automàticament tots els rastrejadors"
+   },
+    "settings__auto_block_trackers__info_true": {
+      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir rastredadors individualment a la llista blanca."
+   },
+    "settings__auto_block_trackers__info_false": {
+      "message": "Quan estigui activat, es bloquejarà la càrrega de tots els rastrejadors coneguts. Per ara, els rastrejadors no es bloquejaran automàticament, però pots bloquejar-los individualment."
+   },
+//AutoBlock type
+    "settings__auto_block_trackers__type_all__title": {
+      "message": "Bloqueja tots els rastrejadors"
+   },
+    "settings__auto_block_trackers__type_all__info": {
+      "message": "Bloquejar la càrrega de tots els rastrejadors coneguts. Pots afegir els rastrejadors manualment a la llista blanca, de forma individual."
+   },
+    "settings__auto_block_trackers__type_exception__title": {
+      "message": "Bloquejar tots els rastrejadors excepte els CDN"
+   },
+    "settings__auto_block_trackers__type_exception__info": {
+      "message": "Només permet els URLs que no facin un seguiment com a finalitat principal, ja que també tenen altres usos, dels quals els llocs web poden dependre per funcionar correctament. En canvi, es bloquejaran les cookies establertes per aquests."
+   },
+
+//AutoDelete
+    "settings__auto_delete_data__label": {
+      "message": "El·limina automàticament totes les dades del seguiment cada:"
+   },
+    "settings__auto_delete_data__value": {
+      "message": "$VALUE$ dies",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+    "settings__auto_delete_data__info": {
+      "message": "Totes les dades recollides sobre els rastrejadors en els llocs web que has visitat s'el·limiranàn automàticament cada $VALUE$ dies.",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "50"
+        }
+      }
+   },
+
+//Block Cookies
+    "settings__block_cookies__label": {
+      "message": "Impedeix que les cookies s'estableixin i s'enviïn als llocs web"
+   },
+    "settings__block_cookies__info_true": {
+      "message": "S'impedirà automàticament que les cookies s'estableixin i s'enviïn als llocs web."
+   },
+    "settings__block_cookies__info_false": {
+      "message": "Quan estigui activat, s'impedirà que les cookies s'estableixin i s'enviïn als llocs web. De moment, es permetran totes les cookies."
+   },
+
+
+//----------Privacy------------
+   "settings__privacy__title": {
+      "message": "Privacitat:"
+   },
+//Hilde location
+    "settings__privacy__location__label": {
+      "message": "Amaga la meva ubicació dels llocs web"
+   },
+    "settings__privacy__location__info_true": {
+      "message": "Els llocs web que sol·licitin la teva geolocalització rebran una falsa aleatòria en lloc de la teva real."
+   },
+    "settings__privacy__location__info_false": {
+      "message": "Quan estigui activat, els llocs web que sol·licitin la teva geolocalització rebran una falsa en lloc de la teva real. Per ara, es farà servir la teva ubicació real."
+   },
+//Hide UserAgent
+    "settings__privacy__userAgent__label": {
+      "message": "Amaga la meva informació sobre el userAgent"
+   },
+    "settings__privacy__userAgent__info_true": {
+      "message": "Els llocs web rebran informació falsa sobre el teu navegador i dispositiu, en lloc de la teva real."
+   },
+    "settings__privacy__userAgent__info_false": {
+      "message": "Quan estigui activat, els llocs web rebran informació falsa sobre el teu navegador i dispositiu, en lloc de la teva real. De moment, les pàgines podran veure la teva informació real."
+   },
+
+
+/*-------------------------------------------------------
+                  FOOTER
+*-------------------------------------------------------*/ 
+//----------Contact------------
+    "footer__contact__title": {
+      "message": "Contacte:"
+   },
+    "footer__contact__social__title": {
+      "message": "Segueix-me:"
+   },
+    "footer__contact__support__title": {
+      "message": "Dona'm suport:"
+   },
+
+    "footer__contact__credits__title": {
+      "message": "Crèdits"
+   },
+
+//----------About------------
+    "footer__about__title": {
+      "message": "Sobre:"
+   },
+    "footer__about__version__title": {
+      "message": "Versió:"
+   },
+    "footer__about__page__title": {
+      "message": "Pàgina principal:"
+   },
+    "footer__about__support__title": {
+      "message": "Suport:"
+   },
+    "footer__about__support__value": {
+      "message": "Contacte de suport"
+   },
+    "footer__about__help__title": {
+      "message": "Vols ajudar?"
+   },
+    "footer__about__help__value": {
+      "message": "Contribuir"
+   },
+    "footer__about__about__title": {
+      "message": "Sobre Tracker Spy:"
+   },
+
+
+
+/*-------------------------------------------------------
+                  SETUP
+*-------------------------------------------------------*/ 
+    "setup__welcome__title": {
+      "message": "Benvingut/a!"
+   },
+    "setup__welcome__info": {
+      "message": "Benvingut/a! Ara passaràs per un procés de configuració ràpid per ajudar-te a configurar les coses. Fes clic a següent per continuar."
+   },
+
+//----------AutoBlock------------>
+    "setup__autoBlock__title": {
+      "message": "Vols bloquejar automàticament els rastrejadors?"
+   },
+    "setup__autoBlock__info": {
+      "message": "Selecciona si vols bloquejar automàticament els rastrejadors coneguts o no."
+   },
+    "setup__autoBlock__option_true__title": {
+      "message": "Bloqueja automàticament els rastrejadors"
+   },
+    "setup__autoBlock__option_true__info": {
+      "message": "Es bloquejarà la càrrega de tots els rastrejadors coneguts. Pots afegir rastredadors individualment a la llista blanca"
+   },
+    "setup__autoBlock__option_false__title": {
+      "message": "Permet tots els seguidors"
+   },
+    "setup__autoBlock__option_false__info": {
+      "message": "Els rastrejadors es carregaran amb normalitat, però pots bloquejar-los manualment de forma individual"
+   },
+//----------Auto Delete------------>
+    "setup__autoDelete__title": {
+      "message": "Amb quina freqüència s'hauria d'el·liminar la informació recopilada?"
+   },
+    "setup__autoDelete__info": {
+      "message": "Selecciona la freqüència amb què vols que s'el·liminin totes les dades recollides sobre les pàgines que has visitat, els rastrejadors trobats, etc.."
+   },
+
+//----------Hide location------------>
+    "setup__hideLocation__title": {
+      "message": "Vols amagar la teva ubicació?"
+   },
+    "setup__hideLocation__info": {
+      "message": "Selecciona si els llocs web que sol·liciten la teva geolocalització (com mapes, etc...) han de rebre una ubicació falsa o no. Independentment del que triis, pots veure l'activitat de la ubicació a l'informe."
+   },
+    "setup__hideLocation__option_true__title": {
+      "message": "Amaga la meva ubicació"
+   },
+    "setup__hideLocation__option_true__info": {
+      "message": "Els llocs web que sol·licitin la teva geolocalització rebran una falsa."
+   },
+    "setup__hideLocation__option_false__title": {
+      "message": "Utilitza la meva ubicació real"
+   },
+    "setup__hideLocation__option_false__info": {
+      "message": "Els llocs web que sol·licitin la teva geolocalització rebran la teva real."
+   },
+
+//----------Hide UserAgent------------>
+    "setup__hideUserAgent__title": {
+      "message": "Vols amagar el teu UserAgent?"
+   },
+    "setup__hideUserAgent__info": {
+      "message": "Selecciona si els llocs web que llegeixen la informació del teu navegador i dispositiu haurien de rebre una falsa o no."
+   },
+    "setup__hideUserAgent__option_true__title": {
+      "message": "Amaga el meu UserAgent"
+   },
+    "setup__hideUserAgent__option_true__info": {
+      "message":"Els llocs web rebran informació falsa sobre el teu navegador i dispositiu, en lloc de la real."
+   },
+    "setup__hideUserAgent__option_false__title": {
+      "message": "Utilitza el meu UserAgent real"
+   },
+    "setup__hideUserAgent__option_false__info": {
+      "message": "Els llocs web rebran la informació real del teu navegador i dispositiu."
+   },
+
+//----------Search tip------------>
+    "setup__search__title": {
+      "message": "Cerca rastrejadors trobats"
+   },
+    "setup__search__info": {
+      "message": "Podeu utilitzar la barra de cerca de Chrome per cercar els rastrejadors trobats i se us mostrarà informació rellevant sobre aquest rastrejador."
+   },
+
+//----------End ------------>
+    "setup__end__title": {
+      "message": "Configuració completa!"
+   },
+    "setup__end__info": {
+      "message": "La configuració ja s'ha completat! Ara podeu començar a utilitzar l'extensió."
+   },
+
+
+
+/*-------------------------------------------------------
+                  OTHER
+*-------------------------------------------------------*/ 
+    "time_unit__second": {
+      "message": "seg"
+   },
+    "time_unit__seconds": {
+      "message": "seg"
+   },
+    "time_unit__minute": {
+      "message": "min"
+   },
+    "time_unit__minutes": {
+      "message": "min"
+   },
+    "time_unit__hour": {
+      "message": "hr"
+   },
+    "time_unit__hours": {
+      "message": "hrs"
+   },
+    "time_unit__day": {
+      "message": "dia"
+   },
+    "time_unit__days": {
+      "message": "dies"
+   },
+
+    "time_difference": {
+      "message": "fa $VALUE$ $UNIT$",
+      "placeholders": {
+        "value": {
+          "content": "$1",
+          "example": "1"
+        },
+        "unit": {
+          "content": "$2",
+          "example": "minute"
+        }
+      }
+   },
+
+    "privacy__used_location": {
+      "message": "Ha usat la teva ubicació",
+      "placeholders": {
+        "item": {
+          "content": "$1",
+          "example": "1"
+        }
+      }
+   },
+
+ 
+/*-------------------------------------------------------
+    ////////////////////////////////////////////////////
+
+                  EXTENSION POPUP
+
+    ////////////////////////////////////////////////////
+*-------------------------------------------------------*/  
+
+    "popup__title": {
+      "message": "About this page"
+   },
+    "popup__found_title": {
+      "message": "Trackers found"
+   },
+    "popup__blocked_title": {
+      "message": "Trackers blocked"
+   },
+    "popup__info_title": {
+      "message": "Trackers info"
+   }
+
+}

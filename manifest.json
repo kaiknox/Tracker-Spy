@@ -1,0 +1,68 @@
+{
+
+   "manifest_version": 3,
+   "name": "Tracker Spy",
+   "description": "Get info about the tyrackers found on websites you visit",
+   "author": "Kai K",
+   "default_locale": "en",
+  "icons": {
+    "128": "icon.png"
+  },
+  "omnibox": { "keyword" : "ts" },
+
+   "content_scripts": 
+    [
+        {
+            "matches":["<all_urls>"],
+            "run_at": "document_idle",
+            "js":["jQuery.js", "trackers/trackersIdentifier.js"],
+            "all_frames": false
+        }
+    ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options/options.html",
+  "action": {
+    "default_popup": "options/popup.html"
+  },
+   "version": "1.0",
+  "web_accessible_resources": [{
+    "resources": ["font-awesome/webfonts/fa-brands-400.woff2",
+
+"font-awesome/webfonts/fa-brands-400.woff",
+"font-awesome/webfonts/fa-brands-400.ttf",
+"font-awesome/webfonts/fa-duotone-900.woff2",
+"font-awesome/webfonts/fa-duotone-900.woff",
+"font-awesome/webfonts/fa-duotone-900.ttf",
+"font-awesome/webfonts/fa-light-300.woff2",
+"font-awesome/webfonts/fa-light-300.woff",
+"font-awesome/webfonts/fa-light-300.ttf",
+"font-awesome/webfonts/fa-regular-400.woff2",
+"font-awesome/webfonts/fa-regular-400.woff",
+"font-awesome/webfonts/fa-regular-400.ttf",
+"font-awesome/webfonts/fa-solid-900.woff2",
+"font-awesome/webfonts/fa-solid-900.woff",
+"font-awesome/webfonts/fa-solid-900.ttf",
+"font-awesome/css/all.css", "font-awesome/js/all.js", "trackers/trackers.json", "privacy.js"],
+    "matches": ["<all_urls>"]
+  }],
+      "permissions": ["cookies", "alarms", "scripting", "tabs", "activeTab", "storage", "contextMenus", "declarativeNetRequest", "declarativeNetRequestFeedback"],
+"host_permissions": [
+  "<all_urls>", "http://*/[*]*?", "https://*/[*]*?", "*://*/*", "file://*", "file://*/*", "file:///*/*", "file:///*"
+],
+  "declarative_net_request" : {
+    "rule_resources" : [{
+      "id": "ruleset_1",
+      "enabled": true,
+      "path": "trackers/trackers.json"
+    }]
+  },
+
+   "externally_connectable": {
+    "matches": ["*://how-to-stuff.com/*", "https://how-to-stuff.com/neo/"]
+}
+}
+
+

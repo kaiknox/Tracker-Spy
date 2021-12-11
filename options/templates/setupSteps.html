@@ -1,0 +1,159 @@
+
+<div class="setup-step" data-display="flex" data-setup-subject="setupStart" style="align-items: center;">
+      <div class="step-content-wrapper">
+         <span style="display: block; font-size:  60px; text-align: center; margin: auto; margin-bottom: 10px;">🎉 </span>
+         <h2 style="text-align: center;">{{'setup__welcome__title' | i18n}}</h2>
+         <p style="text-align: center;">{{'setup__welcome__info' | i18n}}</p>
+      </div>
+</div>
+<div class="setup-step" data-setup-subject="autoBlock">
+<div class="step-content-wrapper">
+   <i class="fas red color-text fa-ban" style="display: block; font-size:  60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+   <h2 style="text-align: center;">{{'setup__autoBlock__title' | i18n}}</h2>
+   <p style="text-align: center;">{{'setup__autoBlock__info' | i18n}}</p>
+                       
+
+
+
+                         <div ng-class="{'selected': settings.autoBlock.enabled == item.value}" ng-click="settings.autoBlock.enabled = item.value; updateSettings($event, 'auto-block-trackers');" class="card card-sm hover red" style="margin: auto; margin-top: 15px; width: 90%;" ng-repeat="item in [{value: true, status: 'on', icon: 'fa-ban'}, {value: false, status: 'off', icon: 'fa-check'}]">
+    <div style="display: flex;flex-direction: row;align-items: center;gap: 15px;">
+    <div style="width: 30px;">
+          <i class="fas red color-text {{item.icon}}" style="display: block; font-size: 30px;"></i>
+    </div>
+    <div>
+      <h6 style="margin-bottom: 3px;">{{'setup__autoBlock__option_'+item.value+'__title' | i18n}}</h6>
+      <p style="margin: 0;">{{'setup__autoBlock__option_'+item.value+'__info' | i18n}}</p>
+   </div>
+    <div>
+      <span>
+         <i class="fas fa-chevron-right" style="margin-left: auto; display: block; font-size: 30px;"></i>
+      </span>
+   </div>
+</div>
+
+    <div ng-if="settings.autoBlock.enabled && item.value == true" class="" style="margin-top: 10px;">
+      <hr ng-if="$index == 0" style="width: 90%; margin: auto; margin-top: 5px;
+                                          margin-bottom: 5px;">
+                              <label ng-repeat="item2 in [{value: 'all'}, {value: 'exception'}]" class="radio-container">
+                                 <input value="{{item2.value}}" ng-model="settings.autoBlock.type" ng-change="updateSettings($event, 'auto-block-trackers-type')" type="radio" name="autoBlockType2">
+                                 <span style="display: inline-block; vertical-align: middle;" class="blue checkmark"></span>
+                                 <span style="display: inline-block; width: calc(100% - 41px);
+                                             margin-left: 10px;
+                                             vertical-align: middle;">
+                                    <span style="color: var(--main-label);">{{'settings__auto_block_trackers__type_'+item2.value+'__title' | i18n}}</span>
+                                    <span style="margin-top: 3px; display: block; font-size: 12px;">{{'settings__auto_block_trackers__type_'+item2.value+'__info' | i18n}}
+                                    </span>
+                                 </span>
+                                        <hr ng-if="$index == 0" style="width: 90%; margin: auto; margin-top: 5px;
+                                          margin-bottom: 5px;">
+                              </label>
+                    
+                        </div>
+</div>
+
+
+
+
+                     
+</div>
+</div>
+<div class="setup-step" data-setup-subject="autoDelete">
+   <div class="step-content-wrapper">
+   <i class="fas blue color-text fa-history" style="display: block; font-size:  60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+   <h2 style="text-align: center;">{{'setup__autoDelete__title' | i18n}}</h2>
+   <p style="text-align: center;">{{'setup__autoDelete__info' | i18n}}</p>
+   <div style="margin-top: 50px;" class="card card-sm">
+      <span style="display: flex; align-items: center;">
+         {{'settings__auto_delete_data__label' | i18n}}
+         <select ng-change="updateSettings($event, 'auto-delete-data')" ng-model="settings.autoDelete" style="margin-left: auto;">
+            <option value="30">{{'settings__auto_delete_data__value' | i18n: ['30']}}</option>
+            <option value="20">{{'settings__auto_delete_data__value' | i18n: ['20']}}</option>
+            <option value="15">{{'settings__auto_delete_data__value' | i18n: ['15']}}</option>
+            <option value="10">{{'settings__auto_delete_data__value' | i18n: ['10']}}</option>
+         </select>
+      </span>
+   </div>
+   <span style="margin-top: 5px; display: block; font-size: 12px;">{{'settings__auto_delete_data__info' | i18n : [settings.autoDelete]}}
+   </span>
+</div>
+</div>
+
+
+
+
+
+<div class="setup-step" data-setup-subject="hideLocation">
+   <div class="step-content-wrapper">
+   <i class="fas indigo color-text fa-location-arrow" style="display: block; font-size: 60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+   <h2 style="text-align: center;">{{'setup__hideLocation__title' | i18n}}</h2>
+   <p style="text-align: center;">{{'setup__hideLocation__info' | i18n}}</p>
+
+
+  <div ng-class="{'selected': settings.privacy.location == item.value}" ng-click="settings.privacy.location = item.value; updateSettings($event, 'location-privacy');" class="card card-sm hover indigo" style="margin: auto; margin-top: 15px; width: 90%; display: flex;flex-direction: row;align-items: center;gap: 15px;" ng-repeat="item in [{value: true, status: 'on', icon: 'fa-location-arrow'}, {value: false, status: 'off', icon: 'fa-location-arrow'}]">
+    <div style="width: 30px;">
+          <i class="fas indigo color-text {{item.icon}}" style="display: block; font-size: 30px;"></i>
+    </div>
+    <div>
+      <h6 style="margin-bottom: 3px;">{{'setup__hideLocation__option_'+item.value+'__title' | i18n}}</h6>
+      <p style="margin: 0;">{{'setup__hideLocation__option_'+item.value+'__info' | i18n}}</p>
+   </div>
+    <div>
+      <span>
+         <i class="fas fa-chevron-right" style="margin-left: auto; display: block; font-size: 30px;"></i>
+      </span>
+   </div>
+</div>
+
+
+ </div>
+</div>
+
+
+<div class="setup-step" data-setup-subject="hideUserAgent">
+   <div class="step-content-wrapper">
+   <i class="fas blue color-text fa-laptop" style="display: block; font-size: 60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+   <h2 style="text-align: center;">{{'setup__hideUserAgent__title' | i18n}}</h2>
+   <p style="text-align: center;">{{'setup__hideUserAgent__info' | i18n}}</p>
+
+  <div ng-class="{'selected': settings.privacy.userAgent == item.value}" ng-click="settings.privacy.userAgent = item.value; updateSettings($event, 'userAgent-privacy');" class="card card-sm hover blue" style="margin: auto; margin-top: 15px; width: 90%; display: flex;flex-direction: row;align-items: center;gap: 15px;" ng-repeat="item in [{value: true, status: 'on', icon: 'fa-laptop'}, {value: false, status: 'off', icon: 'fa-laptop'}]">
+    <div style="width: 30px;">
+          <i class="fas blue color-text {{item.icon}}" style="display: block; font-size: 30px;"></i>
+    </div>
+    <div>
+      <h6 style="margin-bottom: 3px;;">{{'setup__hideUserAgent__option_'+item.value+'__title' | i18n}}</h6>
+      <p style="margin: 0;">{{'setup__hideUserAgent__option_'+item.value+'__info' | i18n}}</p>
+   </div>
+    <div>
+      <span>
+         <i class="fas fa-chevron-right" style="margin-left: auto; display: block; font-size: 30px;"></i>
+      </span>
+   </div>
+</div>
+
+ </div>
+</div>
+
+
+
+<div class="setup-step" data-setup-subject="trackerSearch">
+   <div class="step-content-wrapper">
+   <i class="fas blue color-text fa-search" style="display: block; font-size:  60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+   <h2 style="text-align: center;">{{'setup__search__title' | i18n}}</h2>
+   <p style="text-align: center;">{{'setup__search__info' | i18n}}</p>
+
+
+              <img style="margin: auto; width: 80%; border-radius: 10px;" class="hide-dark" src="assets/search_light.png">
+              <img style="margin: auto; width: 80%; border-radius: 10px;" class="hide-light" src="assets/search_dark.png">
+           </div>
+</div>
+
+
+
+<div class="setup-step" data-setup-subject="setupEnd" style="align-items: center;">
+   <div class="step-content-wrapper">
+      <i class="fas blue color-text fa-history" style="display: block; font-size:  60px; text-align: center; margin: auto; margin-bottom: 10px;"></i>
+      <h2 style="text-align: center;">{{'setup__end__title' | i18n}}</h2>
+      <p style="text-align: center;">{{'setup__end__info' | i18n}}</p>
+      <button style="display: block; margin: auto;" type="button" class="button primary-action blue">{{'action_finish' | i18n}}</button>
+   </div>
+</div>
