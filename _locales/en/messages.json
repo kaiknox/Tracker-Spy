@@ -1,23 +1,10 @@
 {
-//-------------------------------------------------------
-    ////////////////////////////////////////////////////
-
-                //EXTENSION DESCRIPTIONS
-
-    ////////////////////////////////////////////////////
-//-------------------------------------------------------           
+       
     "general__description_short": {
       "message": "Get to know who is tracking you."
    },
 
 
-//-------------------------------------------------------
-    ////////////////////////////////////////////////////
-
-                //EXTENSION CONTEXTMENUS
-
-    ////////////////////////////////////////////////////
-//-------------------------------------------------------  
     "contextMenu__report": {
       "message": "Report"
    },
@@ -25,21 +12,12 @@
       "message": "Get info about this URL"
    },
 
-//-------------------------------------------------------
-    ////////////////////////////////////////////////////
-
-                //EXTENSION SETTINGS
-
-    ////////////////////////////////////////////////////
-//-------------------------------------------------------       
+    
     "title": {
       "message": "Report"
    },
 
-//-------------------------------------------------------
-                //WEBSITES PANNEL
-//------------------------------------------------------     
-//Headers
+
     "websites__summary__title": {
       "message": "Websites summary"
    },
@@ -53,7 +31,6 @@
       "message": "A list of all the websites you visited, where trackers were found."
    },
 
-//Field titles in list
     "websites__list__field__website": {
       "message": "Website"
    },
@@ -68,7 +45,6 @@
       "message": "Value"
    },
 
-//View options in modal when viewing a website
     "websites__view__trackers": {
       "message": "Trackers"
    },
@@ -76,20 +52,15 @@
       "message": "Cookies"
    },
 
-//Search field
     "websites__list__search": {
       "message": "Search by website URL"
    },
 
-//Item status (little icon in list item)
     "trackers__list__status__location": {
       "message": "Used your location"
    },
 
-//-------------------------------------------------------
-                //TRACKERS PANNEL
-//------------------------------------------------------- 
-//Headers
+
     "trackers__summary__title": {
       "message": "Trackers summary"
    },
@@ -103,7 +74,6 @@
       "message": "A list of all the trackers found on websites you visited."
    },
 
-//Field titles in list
     "trackers__list__field__tracker": {
       "message": "Tracker"
    },
@@ -117,12 +87,10 @@
       "message": "Type"
    },
 
-//Search field
     "trackers__list__search": {
       "message": "Search tracker name or URL"
    },
 
-//Item status (little icon in list item)
     "trackers__list__status__blocked": {
       "message": "Blocked"
    },
@@ -131,10 +99,7 @@
    },
 
 
-//-------------------------------------------------------
-                //STATS SECTION
-//-------------------------------------------------------
-//Ammount of websites with trackers
+
     "stats__websites_tracked__info": {
       "message": "$DETAILS$% of websites you've visited so far contain one or more trackers.",
       "placeholders": {
@@ -145,7 +110,6 @@
       }
    },
 
-//Most used tracker
     "stats__popular_tracker__info": {
       "message": "$DETAILS$ is the most common tracker found on websites you've visited.",
       "placeholders": {
@@ -158,7 +122,6 @@
     "stats__popular_tracker__count": {
       "message": "Sites"
    },
-//Cookies
     "stats__cookies__count": {
       "message": "Cookies"
    },
@@ -169,7 +132,6 @@
       "message": "Tracking cookies"
    },
 
-//Data summary   
     "stats__summary__websites__title": {
       "message": "Top websites"
    },
@@ -177,7 +139,6 @@
       "message": "Top trackers"
    },
 
-//Location  
     "stats__privacy__location__noData": {
       "message": "Websites that have recently accessed your location will show up here."
    },
@@ -200,10 +161,6 @@
 
 
 
-//-------------------------------------------------------
-                //STATUS MESSAGES
-//-------------------------------------------------------
-//Block
     "status__block__success": {
       "message": "Successfully blocked tracker"
    },
@@ -222,7 +179,6 @@
       "message": "Unknown trackers can't be blocked!"
    },
 
-//Unblock
    "status__unblock__success": {
       "message": "Successfully unblocked tracker"
    },
@@ -230,7 +186,6 @@
       "message": "There was a problem unblocking this tracker"
    },
 
-//Cookies
     "status__block_cookies__success": {
       "message": "Successfully blocked cookies for this URL"
    },
@@ -247,14 +202,11 @@
       "message": "There were no cookies to clear"
    },
 
-//Query
     "status__search_query__error": {
       "message": "There was nothing matching your query"
    },
 
 
-
-//------Blocked / Whitelisted--------->
 
     "blocked__title": {
       "message": "Blocked"
@@ -269,10 +221,7 @@
     "whiteListed__info": {
       "message": "A list of all the trackers you have whitelisted."
    },
-//-------------------------------------------------------
-                //ACTION BUTTONS
-//------------------------------------------------------- 
-//Main actions
+
     "action_close": {
       "message": "Close"
    },
@@ -289,7 +238,7 @@
       "message": "Finish"
    },
 
-//Block actions
+
     "action_block": {
       "message": "Block"
    },
@@ -304,10 +253,7 @@
 
 
 
-//-------------------------------------------------------
-                    //POPUPS
-//------------------------------------------------------- 
-//Block cdn
+
   "popup__block_critical_domain__title": {
       "message": "Are you sure?"
    },
@@ -328,9 +274,7 @@
    },
 
 
-//-------------------------------------------------------
-                  //DETAILS MODAL
-//-------------------------------------------------------
+
     "detailsModal__title": {
       "message": "Details for $DETAILS$",
       "placeholders": {
@@ -341,8 +285,7 @@
       }
    },
 
-//----------Cookie------------>
-//Data list
+
     "detailsModal__cookie__list__title": {
       "message": "Websites using this cookie:"
    },
@@ -350,7 +293,7 @@
       "message": "A list of all the websites you've visited that use this cookie."
    },
 
-//Cookie details
+
     "detailsModal__cookie__info__name__label": {
       "message": "Name:"
    },
@@ -364,8 +307,7 @@
       "message": "Value:"
    },
 
-//----------Tracker------------>
-//Details
+
     "detailsModal__tracker__info__name__label": {
       "message": "Name:"
    },
@@ -397,7 +339,7 @@
       "message": "Parent domain:"
    },
 
-//Data list
+
     "detailsModal__tracker__list__title": {
       "message": "Websites using this tracker:"
    },
@@ -405,8 +347,7 @@
       "message": "A list of all the websites you've visited that use this tracker."
    },
 
-//----------Website------------>
-//Details
+
     "detailsModal__website__info__privacy__location": {
       "message": "Used your location <b>$VALUE$ $UNIT$ ago</b>",
       "placeholders": {
@@ -463,7 +404,6 @@
       }
    },
 
-//Data list
     "detailsModal__website__trackers__list__title": {
       "message": "Trackers found on this page:"
    },
@@ -480,22 +420,17 @@
 
 
 
-//----------Whitelisted / blocked------------>
-//Item
+
     "detailsModal__blocked__item__only_cookies": {
       "message": "Only blocking cookies"
    },
-//-------------------------------------------------------
-                  //SETTINGS
-//------------------------------------------------------- 
+
    "settings__title": {
       "message": "Settings"
    },
-//----------Trackers & data------------
     "settings__trackers_and_data__title": {
       "message": "Trackers and data:"
    },
-//AutoBlock
     "settings__auto_block_trackers__label": {
       "message": "Automatically block all known trackers"
    },
@@ -505,7 +440,6 @@
     "settings__auto_block_trackers__info_false": {
       "message": "When enabled, all known trackers will be blocked from loading. For now, trackers will load as normal, but you can manually block them individually."
    },
-//AutoBlock type
     "settings__auto_block_trackers__type_all__title": {
       "message": "Block all trackers"
    },
@@ -519,7 +453,6 @@
       "message": "Only allow URLs that don't track you as the main purpose, as they also have other uses, which websites may depend on to work correctly. Instead, cookies set by these will be blocked."
    },
 
-//AutoDelete
     "settings__auto_delete_data__label": {
       "message": "Automatically delete all collected data every:"
    },
@@ -542,7 +475,6 @@
       }
    },
 
-//Block Cookies
     "settings__block_cookies__label": {
       "message": "Prevent cookies from being set and sent to websites"
    },
@@ -554,11 +486,9 @@
    },
 
 
-//----------Privacy------------
    "settings__privacy__title": {
       "message": "Privacy:"
    },
-//Hilde location
     "settings__privacy__location__label": {
       "message": "Hide my location from websites"
    },
@@ -568,7 +498,6 @@
     "settings__privacy__location__info_false": {
       "message": "When enabled, websites that request your geolocation will be given a fake location instead of your real one. For now, your real location will be used."
    },
-//Hide UserAgent
     "settings__privacy__userAgent__label": {
       "message": "Hide my userAgent info"
    },
@@ -580,10 +509,7 @@
    },
 
 
-//-------------------------------------------------------
-                  //FOOTER
-//-------------------------------------------------------
-//----------Contact------------
+
     "footer__contact__title": {
       "message": "Contact:"
    },
@@ -598,7 +524,6 @@
       "message": "Credits"
    },
 
-//----------About------------
     "footer__about__title": {
       "message": "About:"
    },
@@ -625,10 +550,7 @@
    },
 
 
-
-//-------------------------------------------------------
-                  //SETUP
-//------------------------------------------------------- 
+ 
     "setup__welcome__title": {
       "message": "Welcome!"
    },
@@ -636,7 +558,6 @@
       "message": "Welcome! You will now go through a quick setup process to help you set things up. Click next to continue."
    },
 
-//----------AutoBlock------------>
     "setup__autoBlock__title": {
       "message": "Would you like to automatically block trackers?"
    },
@@ -655,7 +576,6 @@
     "setup__autoBlock__option_false__info": {
       "message": "Trackers will load as normal, but you can manually block them individually."
    },
-//----------Auto Delete------------>
     "setup__autoDelete__title": {
       "message": "How often should collected information be cleared?"
    },
@@ -663,7 +583,6 @@
       "message": "Select how often you would like all collected data about the pages you visited, trackers found, etc to be cleared."
    },
 
-//----------Hide location------------>
     "setup__hideLocation__title": {
       "message": "Would you like to hide your location?"
    },
@@ -683,7 +602,6 @@
       "message": "Websites requesting your geolocation will be given your real one."
    },
 
-//----------Hide UserAgent------------>
     "setup__hideUserAgent__title": {
       "message": "Would you like to hide your UserAgent when possible?"
    },
@@ -703,7 +621,6 @@
       "message": "Websites will be given your real browser and device information."
    },
 
-//----------Search tip------------>
     "setup__search__title": {
       "message": "Search for found trackers"
    },
@@ -711,7 +628,6 @@
       "message": "You can use the chrome search bar to look up found trackers, and you will be shown relevant information about that tracker."
    },
 
-//----------End ------------>
     "setup__end__title": {
       "message": "Setup complete!"
    },
@@ -722,9 +638,6 @@
 
 
 
-//-------------------------------------------------------
-                  //OTHER
-//-------------------------------------------------------
     "time_unit__second": {
       "message": "sec"
    },
@@ -775,13 +688,6 @@
    },
 
  
-//-------------------------------------------------------
-    ////////////////////////////////////////////////////
-
-                  //EXTENSION POPUP
-
-    ////////////////////////////////////////////////////
-//------------------------------------------------------- 
 
     "popup__title": {
       "message": "About this page"
