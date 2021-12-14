@@ -371,7 +371,7 @@ function loadAllData() {
     }
 
 //Only execute if there was a website that used user's location, othetwyse, undefined will be pased into the function that calculates timeDif
-if (websites.list.data[recentLocationUseItemPos].info.privacy.location) {
+if (websites.list.data[recentLocationUseItemPos]?.info.privacy.location) {
   stats.recentLocationUse.time = getTimeDifference("", websites.list.data[recentLocationUseItemPos]?.info.privacy.location.time) ?? false
 }
 
