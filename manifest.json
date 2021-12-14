@@ -58,11 +58,7 @@
       "enabled": true,
       "path": "trackers/trackers.json"
     }]
-  },
-
-   "externally_connectable": {
-    "matches": ["*://how-to-stuff.com/*", "https://how-to-stuff.com/neo/"]
-}
+  }
 }
 
 
