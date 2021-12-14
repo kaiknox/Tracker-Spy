@@ -2,7 +2,7 @@
 
    "manifest_version": 3,
    "name": "Tracker Spy",
-   "description": "Get info about the tyrackers found on websites you visit",
+   "description": "__MSG_@@general__description_short__",
    "author": "Kai K",
    "default_locale": "en",
   "icons": {
