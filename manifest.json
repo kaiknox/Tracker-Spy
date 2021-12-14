@@ -2,7 +2,7 @@
 
    "manifest_version": 3,
    "name": "Tracker Spy",
-   "description": "__MSG_@@general__description_short__",
+   "description": "__MSG_general__description_short__",
    "author": "Kai K",
    "default_locale": "en",
   "icons": {
