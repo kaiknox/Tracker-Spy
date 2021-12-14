@@ -48,7 +48,7 @@
 "font-awesome/css/all.css", "font-awesome/js/all.js", "trackers/trackers.json", "privacy.js"],
     "matches": ["<all_urls>"]
   }],
-      "permissions": ["cookies", "alarms", "scripting", "tabs", "activeTab", "storage", "contextMenus", "declarativeNetRequest", "declarativeNetRequestFeedback"],
+      "permissions": ["cookies", "alarms", "scripting", "tabs", "activeTab", "storage", "contextMenus", "declarativeNetRequest"],
 "host_permissions": [
   "<all_urls>", "http://*/[*]*?", "https://*/[*]*?", "*://*/*", "file://*", "file://*/*", "file:///*/*", "file:///*"
 ],
