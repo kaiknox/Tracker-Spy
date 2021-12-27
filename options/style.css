@@ -811,11 +811,12 @@ a.hr-icon-label:hover {
 	margin-right: 10px; 
 	display: flex; 
 	background: var(--secondary-bg-group); 
-	border-radius: 9px; 
+	border-radius: 20px; 
 	width: 35px; 
 	height: 35px; 
 	position: relative;
 	transition: all .4s;
+	box-shadow: rgb(0 0 0 / 35%) 0px 0px 20px -10px;
 }
 .socialBtn:hover {
 	transform: scale(1.1);
