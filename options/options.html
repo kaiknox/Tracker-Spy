@@ -270,7 +270,7 @@
     flex-direction: row;
     align-items: center;
     gap: 20px;">
-                   <h1 ng-if="!stats.popularTracker" class="graph-noData" style="text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_s' | i18n}}</h1>
+                   <h1 ng-if="!stats.popularTracker" class="graph-noData" style="text-align: center; opacity: 0.5;">{{'noData_title_s' | i18n}}</h1>
 <span ng-if="stats.popularTracker" style="text-align: center;">
    
    <span data-toggle="tooltip" data-title="{{'detailsModal__website__list__title' | i18n}}" class="color-text blue" style="font-size: 35px; vertical-align: middle; text-align: center;"><span style="color: inherit;" class="count-increase">{{stats.popularTracker.websites.length}} </span><span class="blue color-text" style="font-size: 13px; color: inherit; display: block; text-align: center; text-transform: uppercase;">{{'stats__popular_tracker__count' | i18n}}</span></span>
@@ -294,8 +294,8 @@
     align-items: center;
     gap: 20px;
     height: 100%;">
-                   <h1 ng-if="!stats.popularTracker" class="graph-noData" style="text-align: center; opacity: 0.5; margin-top: 25px;">{{'noData_title_s' | i18n}}</h1>
-<span ng-if="stats.popularTracker" style="text-align: center;">
+                   
+<span style="text-align: center;">
    
    <span data-toggle="tooltip" data-title="" class="color-text orange" style="font-size: 35px; vertical-align: middle; text-align: center;"><span style="color: inherit;" class="count-increase">{{stats.cookies.total}}</span><span class="orange color-text" style="font-size: 13px; color: inherit; display: block; text-align: center; text-transform: uppercase;">{{'stats__cookies__count' | i18n}}</span></span>
                 
@@ -484,18 +484,16 @@
            
 <div>
    <div style="background: var(--secondary-bg-group); width: 70px; height: 70px; border-radius: 100px;">
-      <img src="https://kaiknox.com/me.jpeg" style="width: 70px; height: 70px; border-radius: 100px;">
-   </div>
-   <h4 style="text-align: center; margin-top: 5px; margin-bottom: 0;">Kai K</h4>
-</div>
-<div>
+      <img src="https://kaiknox.com/me.jpeg" style="box-shadow: rgb(0 0 0 / 65%) 0px 0px 20px -10px; width: 70px; height: 70px; border-radius: 100px;">
 
-                                                 <span class="label-title" style="display: block;
-  font-size: 11px;
-  line-height: 1;
-  margin-bottom: 10px;
-  text-transform: uppercase;">{{'footer__contact__social__title' | i18n}}</span>
-                        <span style="display: flex; margin: auto; margin-bottom: 10px;">
+   </div>
+
+</div>
+<div style="display: flex; column-gap: 40px; align-items: center;">
+            <h4 style="margin: 0;">Kai K</h4>
+
+                        
+                        <span style="display: flex; margin: auto;">
                            <a href="{{item.url}}" target="_blank" ng-repeat="item in social" class="socialBtn" data-toggle="tooltip" title="{{item.value}}">
                               <i style="{{item.color}} position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)" class="{{item.icon}}"></i>
                            </a>
@@ -503,22 +501,14 @@
 
 
 
-
-
-
-  <span class="label-title" style="display: block;
-  font-size: 11px;
-  line-height: 1;
-  margin-bottom: 10px;
-  text-transform: uppercase;">{{'footer__contact__support__title' | i18n}}</span>
-                                         <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{transition: all .5s; padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 15px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;text-decoration: none !important;box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/kaik"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important; color: white;">Buy me a coffee</span></a>
-
-
 </div>
 
 
 
                               </div>
+
+
+                                         <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;box-shadow: none !important;border: none !important;vertical-align: middle !important;}.bmc-button{transition: all .5s; padding: 7px 15px 7px 10px !important;line-height: 35px !important;height:51px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 15px !important;border: 1px solid transparent !important;padding: 7px 15px 7px 10px !important;font-size: 22px !important;letter-spacing: 0.6px !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;-webkit-box-sizing: border-box !important;box-sizing: border-box !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {-webkit-box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;text-decoration: none !important;box-shadow: 0px 0px 30px -10px rgba(0,0,0,0.75) !important;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/kaik" style="margin-top: 20px !important;"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px;font-size:28px !important; color: white;">Buy me a coffee</span></a>
 
         </div>
                      </div>
