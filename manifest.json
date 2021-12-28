@@ -45,7 +45,7 @@
 "font-awesome/webfonts/fa-solid-900.woff2",
 "font-awesome/webfonts/fa-solid-900.woff",
 "font-awesome/webfonts/fa-solid-900.ttf",
-"font-awesome/css/all.css", "font-awesome/js/all.js", "trackers/trackers.json", "privacy.js"],
+"font-awesome/css/all.css", "font-awesome/js/all.js", "content-scripts/privacy.js"],
     "matches": ["<all_urls>"]
   }],
       "permissions": ["cookies", "alarms", "scripting", "tabs", "activeTab", "storage", "contextMenus", "declarativeNetRequest"],
