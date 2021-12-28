@@ -1,7 +1,6 @@
 var s = document.createElement('script');
-s.src = chrome.runtime.getURL("privacy.js");
+s.src = chrome.runtime.getURL("content-scripts/privacy.js");
 document.documentElement.appendChild(s);
-//s.remove();
 
 
 
